@@ -1,0 +1,136 @@
+{
+  "B_minus_A_agent_runs": -2,
+  "B_minus_A_total_tokens": -4127,
+  "B_minus_A_wall_time_s": -19.042669749818742,
+  "arms": {
+    "A": {
+      "approved": true,
+      "behavior": "baseline_restart_from_zero",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_pytest-dev__pytest-8365_20260925T121319Z_42bbe44d/A/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan addresses the reviewer feedback well and stays appropriately scoped to the reported issue. It explicitly applies sanitization only to the `pytest-of-<user>` component after the existing username resolution/fallback logic, proposes a dedicated helper, includes concrete regression expectations for `contoso\\\\john_doe`, broadens coverage to other invalid characters, and mentions a deterministic fallback when sanitization would otherwise produce an empty token. It also preserves the existing fallback-related tests and avoids changing unrelated basetemp or mktemp behavior. As a plan, this is adequately specific and aligned with the issue."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 6,
+        "artifact_writes": 6,
+        "checkpoint_bytes_written": 28475,
+        "checkpoint_loads": 0,
+        "checkpoint_writes": 8,
+        "initial_drafts": 2,
+        "pre_interruption_token_usage": {
+          "input_tokens": 3098,
+          "output_tokens": 1002,
+          "requests": 2,
+          "total_tokens": 4100
+        },
+        "pre_interruption_wall_time_s": 16.39820058317855,
+        "recovery_token_usage": {
+          "input_tokens": 7430,
+          "output_tokens": 1741,
+          "requests": 4,
+          "total_tokens": 9171
+        },
+        "recovery_wall_time_s": 26.017660499550402,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 10528,
+          "output_tokens": 2743,
+          "requests": 6,
+          "total_tokens": 13271
+        },
+        "wall_time_s": 42.415964332874864
+      },
+      "recovery_validated": null,
+      "task_id": "pytest-dev__pytest-8365"
+    },
+    "B": {
+      "approved": true,
+      "behavior": "checkpoint_resume",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_pytest-dev__pytest-8365_20260925T121319Z_42bbe44d/B/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately addresses both the issue and the reviewer\u2019s refinements. It explicitly starts by checking the existing failing test to mirror the expected transformed name, scopes the change to `_pytest/tmpdir.py`, introduces a dedicated sanitization helper for the username-derived basetemp component, and preserves existing fallback behavior. It also calls out the separator-replacement/normalization question, adds the requested empty-or-invalid-result edge case, and includes assertions to ensure the result stays under the temp root and remains a single path component. As a plan, this is appropriately targeted and low-risk."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 4,
+        "artifact_writes": 4,
+        "checkpoint_bytes_written": 20200,
+        "checkpoint_loads": 1,
+        "checkpoint_writes": 5,
+        "initial_drafts": 1,
+        "pre_interruption_token_usage": {
+          "input_tokens": 2970,
+          "output_tokens": 883,
+          "requests": 2,
+          "total_tokens": 3853
+        },
+        "pre_interruption_wall_time_s": 13.541507042013109,
+        "recovery_token_usage": {
+          "input_tokens": 4429,
+          "output_tokens": 862,
+          "requests": 2,
+          "total_tokens": 5291
+        },
+        "recovery_wall_time_s": 9.831687457859516,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 7399,
+          "output_tokens": 1745,
+          "requests": 4,
+          "total_tokens": 9144
+        },
+        "wall_time_s": 23.373294583056122
+      },
+      "recovery_validated": true,
+      "task_id": "pytest-dev__pytest-8365"
+    }
+  },
+  "configuration": {
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "experiment_id": "swe_checkpoint_pytest-dev__pytest-8365_20260925T121319Z_42bbe44d",
+    "fault": "one-shot exception after persisted initial reviewer feedback",
+    "full_repo_tests_executed": false,
+    "generation_seed": null,
+    "manifest_sha256": "04580de639a13fa84ce9040b78f70dcfc972da53e84a890c9bc5aec99fc786d9",
+    "max_output_tokens": 2000,
+    "max_revisions": 3,
+    "outcome_scope": "checkpoint/artifact consistency and model-reviewed plan, not executable bug-fix correctness",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "pydantic": "2.13.5"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "protocol": "swe_metadata_checkpoint_v1",
+    "python": "3.10.7",
+    "requested_model": "gpt-5.4",
+    "source_sha256": "c5fe99af1fea6b6b331a5610559ebcd8ac1158cf478619fef449c7acce54b8ac",
+    "task_id": "pytest-dev__pytest-8365",
+    "task_sha256": "e4a58147f29ade4c71144fefb9e97623d9957eebc47459867c7b01ed5f74315d",
+    "temperature": null,
+    "timing_scope": "end-to-end arm including setup, interrupted work, persistence, recovery, and local event logging"
+  },
+  "experiment_id": "swe_checkpoint_pytest-dev__pytest-8365_20260925T121319Z_42bbe44d",
+  "process_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_pytest-dev__pytest-8365_20260925T121319Z_42bbe44d/events.jsonl",
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_pytest-dev__pytest-8365_20260925T121319Z_42bbe44d",
+  "schema_version": 2,
+  "task_id": "pytest-dev__pytest-8365",
+  "task_metadata": {
+    "base_commit": "4964b468c83c06971eb743fbc57cc404f760c573",
+    "benchmark": "SWE-bench Lite",
+    "execution_mode": "metadata_plan_review_with_disk_checkpoint",
+    "full_repo_tests_executed": false,
+    "repo": "pytest-dev/pytest",
+    "source": "swe_bench_lite",
+    "swe_bench_instance_id": "pytest-dev__pytest-8365"
+  },
+  "workflow": "swe_metadata_checkpoint_v1"
+}

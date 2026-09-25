@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "experiment_id": "swe_checkpoint_scikit-learn__scikit-learn-13241_20260925T121424Z_0d51673d",
+  "event_count": 48,
+  "arms": {
+    "A": {
+      "agent_calls": 6,
+      "events": 27,
+      "token_usage": {
+        "input_tokens": 12084,
+        "output_tokens": 3018,
+        "requests": 6,
+        "total_tokens": 15102
+      },
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 0,
+      "final_artifact_count": 4
+    },
+    "B": {
+      "agent_calls": 4,
+      "events": 20,
+      "token_usage": {
+        "input_tokens": 8486,
+        "output_tokens": 1869,
+        "requests": 4,
+        "total_tokens": 10355
+      },
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 1,
+      "final_artifact_count": 4
+    }
+  },
+  "summary_sha256": "4d30de1984e69ffff89ca453f54e4377adf734b2aa9cd3360d8886b4c1898507",
+  "events_sha256": "85beff21d2932d14ad259d37cf10f9bf873a37e8724fc224bed8d38041646e0e",
+  "verifier_sha256": "ef24bc1184f891dd009bd1000ac01d91e30b14aa13b69f3259d10b049a21840d"
+}

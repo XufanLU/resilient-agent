@@ -1,0 +1,136 @@
+{
+  "B_minus_A_agent_runs": -2,
+  "B_minus_A_total_tokens": -12368,
+  "B_minus_A_wall_time_s": -19.532164542470127,
+  "arms": {
+    "A": {
+      "approved": true,
+      "behavior": "baseline_restart_from_zero",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_matplotlib__matplotlib-23299_20260925T121043Z_3e3e4f3b/A/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately incorporates the reviewer feedback and stays grounded in the reported issue. It now correctly makes call-chain tracing the first step, explicitly distinguishes backend name resolution from backend activation, and centers the likely fix on `matplotlib.get_backend()` rather than changing `rc_context()` semantics prematurely. It also adds the requested invariant that a read-only backend query must not import or activate a different backend once pyplot already has an active backend state, and it defines that active state in code terms (initialized pyplot backend module/manager binding, not merely `rcParams['backend']`). The regression section is strengthened with checks for both backend-string stability and figure-manager identity, plus variants for the known non-failing cases and the `plt.close(fig)` consequence. Including comparison of interactive vs non-interactive paths also addresses the `plt.ion()` clue. As a plan, this is sufficiently specific and well scoped."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 6,
+        "artifact_writes": 6,
+        "checkpoint_bytes_written": 42579,
+        "checkpoint_loads": 0,
+        "checkpoint_writes": 8,
+        "initial_drafts": 2,
+        "pre_interruption_token_usage": {
+          "input_tokens": 11126,
+          "output_tokens": 1274,
+          "requests": 2,
+          "total_tokens": 12400
+        },
+        "pre_interruption_wall_time_s": 16.92476375028491,
+        "recovery_token_usage": {
+          "input_tokens": 24449,
+          "output_tokens": 2853,
+          "requests": 4,
+          "total_tokens": 27302
+        },
+        "recovery_wall_time_s": 34.9641161672771,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 35575,
+          "output_tokens": 4127,
+          "requests": 6,
+          "total_tokens": 39702
+        },
+        "wall_time_s": 51.88902066741139
+      },
+      "recovery_validated": null,
+      "task_id": "matplotlib__matplotlib-23299"
+    },
+    "B": {
+      "approved": true,
+      "behavior": "checkpoint_resume",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_matplotlib__matplotlib-23299_20260925T121043Z_3e3e4f3b/B/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately addresses the reviewer feedback and stays grounded in the issue. It now explicitly distinguishes whether corruption is introduced at `rc_context().__exit__` versus only manifested when `get_backend()` triggers lazy resolution, with the requested four checkpoints and comparisons of rcParams, sentinel/default backend state, pyplot backend state, and `Gcf.figs`. It adds a concrete fix decision rule centered on avoiding restoration of a pre-resolution backend sentinel after pyplot resolved a backend inside the context, which is much more actionable than the earlier vague wording. It also targets the relevant `pyplot.py` lazy-init and `switch_backend()` branch that may clear `Gcf.figs`, helping constrain the minimal patch. The regression plan is focused on the user-visible semantics from the report\u2014`get_backend()` must not clear figure registration and `plt.close(fig)` must still work\u2014while also explicitly warning against changing legitimate explicit backend-switch behavior. As a plan, this is sufficiently specific, scoped, and aligned with the bug report and requested test surface."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 4,
+        "artifact_writes": 4,
+        "checkpoint_bytes_written": 30092,
+        "checkpoint_loads": 1,
+        "checkpoint_writes": 5,
+        "initial_drafts": 1,
+        "pre_interruption_token_usage": {
+          "input_tokens": 11200,
+          "output_tokens": 1352,
+          "requests": 2,
+          "total_tokens": 12552
+        },
+        "pre_interruption_wall_time_s": 16.554702708031982,
+        "recovery_token_usage": {
+          "input_tokens": 13207,
+          "output_tokens": 1575,
+          "requests": 2,
+          "total_tokens": 14782
+        },
+        "recovery_wall_time_s": 15.80199066689238,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 24407,
+          "output_tokens": 2927,
+          "requests": 4,
+          "total_tokens": 27334
+        },
+        "wall_time_s": 32.35685612494126
+      },
+      "recovery_validated": true,
+      "task_id": "matplotlib__matplotlib-23299"
+    }
+  },
+  "configuration": {
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "experiment_id": "swe_checkpoint_matplotlib__matplotlib-23299_20260925T121043Z_3e3e4f3b",
+    "fault": "one-shot exception after persisted initial reviewer feedback",
+    "full_repo_tests_executed": false,
+    "generation_seed": null,
+    "manifest_sha256": "04580de639a13fa84ce9040b78f70dcfc972da53e84a890c9bc5aec99fc786d9",
+    "max_output_tokens": 2000,
+    "max_revisions": 3,
+    "outcome_scope": "checkpoint/artifact consistency and model-reviewed plan, not executable bug-fix correctness",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "pydantic": "2.13.5"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "protocol": "swe_metadata_checkpoint_v1",
+    "python": "3.10.7",
+    "requested_model": "gpt-5.4",
+    "source_sha256": "c5fe99af1fea6b6b331a5610559ebcd8ac1158cf478619fef449c7acce54b8ac",
+    "task_id": "matplotlib__matplotlib-23299",
+    "task_sha256": "4e3c146ebcd580a67704ae6f4f39a2a2cb8084b09ef49540550beaad0788efb3",
+    "temperature": null,
+    "timing_scope": "end-to-end arm including setup, interrupted work, persistence, recovery, and local event logging"
+  },
+  "experiment_id": "swe_checkpoint_matplotlib__matplotlib-23299_20260925T121043Z_3e3e4f3b",
+  "process_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_matplotlib__matplotlib-23299_20260925T121043Z_3e3e4f3b/events.jsonl",
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_matplotlib__matplotlib-23299_20260925T121043Z_3e3e4f3b",
+  "schema_version": 2,
+  "task_id": "matplotlib__matplotlib-23299",
+  "task_metadata": {
+    "base_commit": "3eadeacc06c9f2ddcdac6ae39819faa9fbee9e39",
+    "benchmark": "SWE-bench Lite",
+    "execution_mode": "metadata_plan_review_with_disk_checkpoint",
+    "full_repo_tests_executed": false,
+    "repo": "matplotlib/matplotlib",
+    "source": "swe_bench_lite",
+    "swe_bench_instance_id": "matplotlib__matplotlib-23299"
+  },
+  "workflow": "swe_metadata_checkpoint_v1"
+}

@@ -1,0 +1,43 @@
+{
+  "approved": true,
+  "behavior": "checkpoint_resume",
+  "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_sympy__sympy-21055_20260925T121748Z_03484dea/B/checkpoint.json",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan adequately incorporates the reviewer feedback and stays appropriately scoped to `refine()` rather than global `arg` evaluation. It now explicitly calls for verifying refine-dispatch mechanics before assuming registration changes, narrows the negative case to negative real assumptions rather than overgeneral `Q.negative` without validation, preserves caution around `arg(0)`, and adds the more direct regression assertion for `2*Abs(arg(a)) < pi` along with a negative-real test. It also notes reviewing analogous handlers for consistency and avoids unsupported assumptions about existing test coverage. As a plan, this is sufficiently concrete, localized, and aligned with the issue statement and listed test targets."
+  },
+  "final_stage": "approved",
+  "metrics": {
+    "agent_runs": 4,
+    "artifact_writes": 4,
+    "checkpoint_bytes_written": 24593,
+    "checkpoint_loads": 1,
+    "checkpoint_writes": 5,
+    "initial_drafts": 1,
+    "pre_interruption_token_usage": {
+      "input_tokens": 1620,
+      "output_tokens": 1363,
+      "requests": 2,
+      "total_tokens": 2983
+    },
+    "pre_interruption_wall_time_s": 18.672863457817584,
+    "recovery_token_usage": {
+      "input_tokens": 3738,
+      "output_tokens": 1190,
+      "requests": 2,
+      "total_tokens": 4928
+    },
+    "recovery_wall_time_s": 16.818796833977103,
+    "revisions": 1,
+    "token_usage": {
+      "input_tokens": 5358,
+      "output_tokens": 2553,
+      "requests": 4,
+      "total_tokens": 7911
+    },
+    "wall_time_s": 35.491816292051226
+  },
+  "recovery_validated": true,
+  "task_id": "sympy__sympy-21055"
+}

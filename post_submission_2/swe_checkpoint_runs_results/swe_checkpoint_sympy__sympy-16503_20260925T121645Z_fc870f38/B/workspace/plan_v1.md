@@ -1,0 +1,6 @@
+1. Inspect the pretty-print implementation for `Sum`, especially the method that builds its `prettyForm` and sets/propagates the baseline.
+2. Inspect `prettyForm` composition helpers in `stringpict.py` and the `Add` pretty-print path to see how side-by-side terms are vertically aligned.
+3. Adjust the baseline/index for `Sum` so that when used inside `Add`, the summand line is the reference line for concatenation. If `Sum` is assembled from pieces (upper limit, sigma glyph, lower limit, function), ensure the final `prettyForm` baseline matches the row containing the summand expression rather than the geometric center of the whole block.
+4. Keep the change narrowly scoped so other tall operators (`Integral`, `Product`, etc.) are not unintentionally altered unless they share the same broken construction.
+5. Add or update a regression test in the pretty-print tests (likely `sympy/printing/pretty/tests/test_pretty.py`) for `pprint(Sum(x, (x, 1, oo)) + 3)` or the equivalent `pretty(...)` output, asserting that the `x` and `+ 3` occur on the same row.
+6. Regression checks to consider while implementing: existing sum/product/integral pretty-print tests, especially `test_pretty_sum`, `test_pretty_Add`, `test_pretty_product`, and `test_pretty_integrals`, to make sure baseline changes do not shift other multiline operators.

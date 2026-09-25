@@ -1,0 +1,43 @@
+{
+  "approved": true,
+  "behavior": "checkpoint_resume",
+  "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-13241_20260925T121424Z_0d51673d/B/checkpoint.json",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan adequately addresses the reviewer feedback and the issue as a planning document. It now specifies the correct insertion point for deterministic sign normalization (after ordering, truncation, and zero-eigenvalue filtering), states that the normalization must be applied to the stored fitted eigenvector attribute itself (`self.alphas_`) so `transform` and `fit_transform` inherit the same orientation, and clarifies an acceptable `svd_flip` usage/adaptation pattern for column-wise eigenvectors. It also explicitly covers multiple eigensolver backends, strengthens the regression-test plan with repeated-run checks for `dense` and optionally `arpack`, and includes the important caveat about tied eigenvalues/eigenspace rotations so the tests should use non-degenerate data. As a plan, this is concrete and aligned with the supplied task and feedback."
+  },
+  "final_stage": "approved",
+  "metrics": {
+    "agent_runs": 4,
+    "artifact_writes": 4,
+    "checkpoint_bytes_written": 21508,
+    "checkpoint_loads": 1,
+    "checkpoint_writes": 5,
+    "initial_drafts": 1,
+    "pre_interruption_token_usage": {
+      "input_tokens": 3463,
+      "output_tokens": 942,
+      "requests": 2,
+      "total_tokens": 4405
+    },
+    "pre_interruption_wall_time_s": 15.42535062506795,
+    "recovery_token_usage": {
+      "input_tokens": 5023,
+      "output_tokens": 927,
+      "requests": 2,
+      "total_tokens": 5950
+    },
+    "recovery_wall_time_s": 11.355130041949451,
+    "revisions": 1,
+    "token_usage": {
+      "input_tokens": 8486,
+      "output_tokens": 1869,
+      "requests": 4,
+      "total_tokens": 10355
+    },
+    "wall_time_s": 26.780646458733827
+  },
+  "recovery_validated": true,
+  "task_id": "scikit-learn__scikit-learn-13241"
+}

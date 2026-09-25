@@ -1,0 +1,13 @@
+1. Update `sklearn/decomposition/kernel_pca.py` in the fit path that computes the centered kernel matrix eigendecomposition.
+2. Identify the point after all of the following are finished: eigenpair computation, descending eigenvalue ordering, `n_components` truncation, and `remove_zero_eig` filtering. At that final stage, apply deterministic sign normalization to the eigenvector matrix that will be stored on the estimator.
+3. Apply the convention directly to the fitted attribute holding eigenvectors (`self.alphas_`; with matching `self.lambdas_` already ordered/filtered). Do not try to post-process `fit_transform` output separately; `fit_transform` should continue to be derived from the stored eigenvectors/eigenvalues so `fit`, `transform`, and `fit_transform` all share the same orientation.
+4. Use `svd_flip` from `sklearn.utils.extmath` if practical, but be explicit about the pattern since only eigenvectors are available here. For eigenvectors stored as columns, propose either:
+   - `self.alphas_, _ = svd_flip(self.alphas_, np.zeros((self.alphas_.shape[1], self.alphas_.shape[1])))`, if that utility can be used safely with a dummy paired matrix; or
+   - equivalent column-wise sign fixing logic that matches `svd_flip` semantics (e.g., choose each column sign so the entry with largest absolute value is positive).
+   The important part is deterministic per-column normalization of `self.alphas_` itself.
+5. Ensure this sign-fixing runs regardless of eigensolver backend, covering at least `eigen_solver='dense'` and `eigen_solver='arpack'` if both exist in this version.
+6. Regression tests in `sklearn/decomposition/tests/test_kernel_pca.py`:
+   - Strengthen/add a deterministic-output test that runs `KernelPCA(..., kernel='rbf', eigen_solver='dense')` twice on the same non-degenerate dataset and asserts identical `fit_transform(X)` results.
+   - If supported in that version, add the same repeated-run assertion for `eigen_solver='arpack'`.
+   - Keep test data away from exactly repeated or numerically tied eigenvalues so the test validates sign determinism rather than implying full basis determinism under eigenspace rotations.
+7. Conceptual regression checks to preserve: existing KernelPCA tests for `transform` consistency, `remove_zero_eig`, `n_components`, sparse/precomputed kernels, and PCA deterministic-output behavior patterns should remain unaffected except for stabilized signs.

@@ -1,0 +1,136 @@
+{
+  "B_minus_A_agent_runs": -2,
+  "B_minus_A_total_tokens": -3354,
+  "B_minus_A_wall_time_s": -12.938689374830574,
+  "arms": {
+    "A": {
+      "approved": true,
+      "behavior": "baseline_restart_from_zero",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-15512_20260925T121538Z_df30d49a/A/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately incorporates the reviewer\u2019s requested safeguards and stays grounded in metadata-only planning. It now explicitly targets the post-loop/final return path, requires a single authoritative non-convergence outcome before exemplar refinement or label recomputation, and includes the needed dtype/shape assertions for `cluster_centers_indices_` and `labels_`. It also calls out estimator-state handling for empty centers, including `cluster_centers_` shape for euclidean affinity and safe handling for precomputed affinity, plus inspection of `fit`/`predict` assumptions about at least one center. The wording avoids claiming execution or verification and frames the work as code inspection and test updates, which matches the constraints."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 6,
+        "artifact_writes": 6,
+        "checkpoint_bytes_written": 30309,
+        "checkpoint_loads": 0,
+        "checkpoint_writes": 8,
+        "initial_drafts": 2,
+        "pre_interruption_token_usage": {
+          "input_tokens": 2527,
+          "output_tokens": 1017,
+          "requests": 2,
+          "total_tokens": 3544
+        },
+        "pre_interruption_wall_time_s": 13.935855916701257,
+        "recovery_token_usage": {
+          "input_tokens": 6911,
+          "output_tokens": 2040,
+          "requests": 4,
+          "total_tokens": 8951
+        },
+        "recovery_wall_time_s": 26.18916462501511,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 9438,
+          "output_tokens": 3057,
+          "requests": 6,
+          "total_tokens": 12495
+        },
+        "wall_time_s": 40.12514412496239
+      },
+      "recovery_validated": null,
+      "task_id": "scikit-learn__scikit-learn-15512"
+    },
+    "B": {
+      "approved": true,
+      "behavior": "checkpoint_resume",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-15512_20260925T121538Z_df30d49a/B/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately incorporates the reviewer feedback and stays aligned with the issue. It now explicitly targets the likely bad post-loop fallback in the low-level function, separates the three important outcomes (converged, max-iter non-converged, degenerate/equal-similarity), and includes estimator-state review for `predict` without assuming unavailable source details. The regression plan is also strengthened with `n_iter_ == max_iter`, dtype/shape sentinel checks, and a function-level test to keep the public function and estimator consistent. As a plan, this is sufficiently concrete and well-scoped to the documented bug while guarding the listed pass-to-pass cases."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 4,
+        "artifact_writes": 4,
+        "checkpoint_bytes_written": 22809,
+        "checkpoint_loads": 1,
+        "checkpoint_writes": 5,
+        "initial_drafts": 1,
+        "pre_interruption_token_usage": {
+          "input_tokens": 2617,
+          "output_tokens": 981,
+          "requests": 2,
+          "total_tokens": 3598
+        },
+        "pre_interruption_wall_time_s": 13.079964290838689,
+        "recovery_token_usage": {
+          "input_tokens": 4422,
+          "output_tokens": 1121,
+          "requests": 2,
+          "total_tokens": 5543
+        },
+        "recovery_wall_time_s": 14.106345500331372,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 7039,
+          "output_tokens": 2102,
+          "requests": 4,
+          "total_tokens": 9141
+        },
+        "wall_time_s": 27.186454750131816
+      },
+      "recovery_validated": true,
+      "task_id": "scikit-learn__scikit-learn-15512"
+    }
+  },
+  "configuration": {
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "experiment_id": "swe_checkpoint_scikit-learn__scikit-learn-15512_20260925T121538Z_df30d49a",
+    "fault": "one-shot exception after persisted initial reviewer feedback",
+    "full_repo_tests_executed": false,
+    "generation_seed": null,
+    "manifest_sha256": "04580de639a13fa84ce9040b78f70dcfc972da53e84a890c9bc5aec99fc786d9",
+    "max_output_tokens": 2000,
+    "max_revisions": 3,
+    "outcome_scope": "checkpoint/artifact consistency and model-reviewed plan, not executable bug-fix correctness",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "pydantic": "2.13.5"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "protocol": "swe_metadata_checkpoint_v1",
+    "python": "3.10.7",
+    "requested_model": "gpt-5.4",
+    "source_sha256": "c5fe99af1fea6b6b331a5610559ebcd8ac1158cf478619fef449c7acce54b8ac",
+    "task_id": "scikit-learn__scikit-learn-15512",
+    "task_sha256": "84d31da85f6a381c5a20509b1ecb0726277e0179b17978300a3c44c91cd20f9f",
+    "temperature": null,
+    "timing_scope": "end-to-end arm including setup, interrupted work, persistence, recovery, and local event logging"
+  },
+  "experiment_id": "swe_checkpoint_scikit-learn__scikit-learn-15512_20260925T121538Z_df30d49a",
+  "process_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-15512_20260925T121538Z_df30d49a/events.jsonl",
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-15512_20260925T121538Z_df30d49a",
+  "schema_version": 2,
+  "task_id": "scikit-learn__scikit-learn-15512",
+  "task_metadata": {
+    "base_commit": "b8a4da8baa1137f173e7035f104067c7d2ffde22",
+    "benchmark": "SWE-bench Lite",
+    "execution_mode": "metadata_plan_review_with_disk_checkpoint",
+    "full_repo_tests_executed": false,
+    "repo": "scikit-learn/scikit-learn",
+    "source": "swe_bench_lite",
+    "swe_bench_instance_id": "scikit-learn__scikit-learn-15512"
+  },
+  "workflow": "swe_metadata_checkpoint_v1"
+}

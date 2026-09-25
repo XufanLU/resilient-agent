@@ -1,0 +1,43 @@
+{
+  "approved": true,
+  "behavior": "checkpoint_resume",
+  "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_django__django-11905_20260925T120714Z_cfedbdac/B/checkpoint.json",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan addresses the reviewer feedback well and is adequate as a planning document. It now starts by tracing the actual `__isnull` lookup lifecycle before committing to `get_prep_lookup()` or any other hook, explicitly ties validation timing to the existing `test_iterator` failure, and includes inspection of nearby exception patterns so the exception type/message follow Django conventions. It also makes the strict-boolean behavior deliberate, calling out rejection of truthy custom objects, and adds the requested join-regression consideration: invalid RHS should fail before join-promotion matters, while valid booleans must preserve existing behavior. The testing section is sharper and explicitly bifurcates expectations based on whether validation is eager or lazy, which directly resolves the earlier ambiguity."
+  },
+  "final_stage": "approved",
+  "metrics": {
+    "agent_runs": 4,
+    "artifact_writes": 4,
+    "checkpoint_bytes_written": 25562,
+    "checkpoint_loads": 1,
+    "checkpoint_writes": 5,
+    "initial_drafts": 1,
+    "pre_interruption_token_usage": {
+      "input_tokens": 2147,
+      "output_tokens": 1269,
+      "requests": 2,
+      "total_tokens": 3416
+    },
+    "pre_interruption_wall_time_s": 19.89837795915082,
+    "recovery_token_usage": {
+      "input_tokens": 3992,
+      "output_tokens": 1187,
+      "requests": 2,
+      "total_tokens": 5179
+    },
+    "recovery_wall_time_s": 14.13289541611448,
+    "revisions": 1,
+    "token_usage": {
+      "input_tokens": 6139,
+      "output_tokens": 2456,
+      "requests": 4,
+      "total_tokens": 8595
+    },
+    "wall_time_s": 34.03141750022769
+  },
+  "recovery_validated": true,
+  "task_id": "django__django-11905"
+}

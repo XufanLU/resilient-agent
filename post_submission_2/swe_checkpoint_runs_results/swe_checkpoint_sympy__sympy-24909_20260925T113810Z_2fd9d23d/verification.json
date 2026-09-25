@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "experiment_id": "swe_checkpoint_sympy__sympy-24909_20260925T113810Z_2fd9d23d",
+  "event_count": 48,
+  "arms": {
+    "A": {
+      "agent_calls": 6,
+      "events": 27,
+      "token_usage": {
+        "input_tokens": 5284,
+        "output_tokens": 3150,
+        "requests": 6,
+        "total_tokens": 8434
+      },
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 0,
+      "final_artifact_count": 4
+    },
+    "B": {
+      "agent_calls": 4,
+      "events": 20,
+      "token_usage": {
+        "input_tokens": 3814,
+        "output_tokens": 1795,
+        "requests": 4,
+        "total_tokens": 5609
+      },
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 1,
+      "final_artifact_count": 4
+    }
+  },
+  "summary_sha256": "6232c9a8cd76dfdbbbc4c85f842c19a7a316df2e3c5886269334017284816ea3",
+  "events_sha256": "10f29e70b0033ae7a374e317e27dc4f6bff02d47fd524c4a0515adcc7bd681b8",
+  "verifier_sha256": "ef24bc1184f891dd009bd1000ac01d91e30b14aa13b69f3259d10b049a21840d"
+}

@@ -1,0 +1,43 @@
+{
+  "approved": true,
+  "behavior": "checkpoint_resume",
+  "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_django__django-13447_20260925T115357Z_2dd0cb10/B/checkpoint.json",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan adequately addresses the issue and the reviewer\u2019s requested refinements. It explicitly separates collection/filtering in `_build_app_dict()` from sorting/shape construction in the new public `get_app_list()`, makes `get_app_list()` the single canonical source for template-facing app data, and clearly identifies which context variables are populated in `index()`, `app_index()`, and `each_context()`. It also adds the requested direct API test for `AdminSite.get_app_list()`, covers the `app_label` filtering and permission-based omission regression case, and states the API stability requirement that the returned structure remains the same except for the additive `model` key in each model dict. The implementation caution about serializability is also captured appropriately. As a plan, this is specific and complete enough."
+  },
+  "final_stage": "approved",
+  "metrics": {
+    "agent_runs": 4,
+    "artifact_writes": 4,
+    "checkpoint_bytes_written": 24757,
+    "checkpoint_loads": 1,
+    "checkpoint_writes": 5,
+    "initial_drafts": 1,
+    "pre_interruption_token_usage": {
+      "input_tokens": 1148,
+      "output_tokens": 1071,
+      "requests": 2,
+      "total_tokens": 2219
+    },
+    "pre_interruption_wall_time_s": 18.686062291730195,
+    "recovery_token_usage": {
+      "input_tokens": 2994,
+      "output_tokens": 1241,
+      "requests": 2,
+      "total_tokens": 4235
+    },
+    "recovery_wall_time_s": 13.016702665947378,
+    "revisions": 1,
+    "token_usage": {
+      "input_tokens": 4142,
+      "output_tokens": 2312,
+      "requests": 4,
+      "total_tokens": 6454
+    },
+    "wall_time_s": 31.70295437471941
+  },
+  "recovery_validated": true,
+  "task_id": "django__django-13447"
+}

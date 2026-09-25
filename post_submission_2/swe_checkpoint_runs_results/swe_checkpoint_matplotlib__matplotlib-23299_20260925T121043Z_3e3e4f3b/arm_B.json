@@ -1,0 +1,43 @@
+{
+  "approved": true,
+  "behavior": "checkpoint_resume",
+  "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_matplotlib__matplotlib-23299_20260925T121043Z_3e3e4f3b/B/checkpoint.json",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan adequately addresses the reviewer feedback and stays grounded in the issue. It now explicitly distinguishes whether corruption is introduced at `rc_context().__exit__` versus only manifested when `get_backend()` triggers lazy resolution, with the requested four checkpoints and comparisons of rcParams, sentinel/default backend state, pyplot backend state, and `Gcf.figs`. It adds a concrete fix decision rule centered on avoiding restoration of a pre-resolution backend sentinel after pyplot resolved a backend inside the context, which is much more actionable than the earlier vague wording. It also targets the relevant `pyplot.py` lazy-init and `switch_backend()` branch that may clear `Gcf.figs`, helping constrain the minimal patch. The regression plan is focused on the user-visible semantics from the report\u2014`get_backend()` must not clear figure registration and `plt.close(fig)` must still work\u2014while also explicitly warning against changing legitimate explicit backend-switch behavior. As a plan, this is sufficiently specific, scoped, and aligned with the bug report and requested test surface."
+  },
+  "final_stage": "approved",
+  "metrics": {
+    "agent_runs": 4,
+    "artifact_writes": 4,
+    "checkpoint_bytes_written": 30092,
+    "checkpoint_loads": 1,
+    "checkpoint_writes": 5,
+    "initial_drafts": 1,
+    "pre_interruption_token_usage": {
+      "input_tokens": 11200,
+      "output_tokens": 1352,
+      "requests": 2,
+      "total_tokens": 12552
+    },
+    "pre_interruption_wall_time_s": 16.554702708031982,
+    "recovery_token_usage": {
+      "input_tokens": 13207,
+      "output_tokens": 1575,
+      "requests": 2,
+      "total_tokens": 14782
+    },
+    "recovery_wall_time_s": 15.80199066689238,
+    "revisions": 1,
+    "token_usage": {
+      "input_tokens": 24407,
+      "output_tokens": 2927,
+      "requests": 4,
+      "total_tokens": 27334
+    },
+    "wall_time_s": 32.35685612494126
+  },
+  "recovery_validated": true,
+  "task_id": "matplotlib__matplotlib-23299"
+}

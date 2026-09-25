@@ -1,0 +1,136 @@
+{
+  "B_minus_A_agent_runs": -2,
+  "B_minus_A_total_tokens": -1627,
+  "B_minus_A_wall_time_s": -10.495392333250493,
+  "arms": {
+    "A": {
+      "approved": true,
+      "behavior": "baseline_restart_from_zero",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_django__django-13447_20260925T115357Z_2dd0cb10/A/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately addresses the reviewer feedback and stays appropriately conservative. It now explicitly treats `get_app_list()` as an additive public wrapper over existing `_build_app_dict()` semantics, preserves compatibility, and defers caller migration until parity is established. It also correctly calls out the risk around `each_context()` and avoids assuming that switching it is automatically safe. The testing section is improved: it prioritizes the known failing `test_available_apps`, adds explicit coverage for the new `app_label` parameter, and specifies regression assertions for unchanged app and model ordering in addition to the new `model` key. Overall, this is a sound implementation plan grounded in the issue and feedback, without overcommitting to behavior changes."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 6,
+        "artifact_writes": 6,
+        "checkpoint_bytes_written": 30310,
+        "checkpoint_loads": 0,
+        "checkpoint_writes": 8,
+        "initial_drafts": 2,
+        "pre_interruption_token_usage": {
+          "input_tokens": 1185,
+          "output_tokens": 945,
+          "requests": 2,
+          "total_tokens": 2130
+        },
+        "pre_interruption_wall_time_s": 15.878126167226583,
+        "recovery_token_usage": {
+          "input_tokens": 4022,
+          "output_tokens": 1929,
+          "requests": 4,
+          "total_tokens": 5951
+        },
+        "recovery_wall_time_s": 26.31999454088509,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 5207,
+          "output_tokens": 2874,
+          "requests": 6,
+          "total_tokens": 8081
+        },
+        "wall_time_s": 42.198346707969904
+      },
+      "recovery_validated": null,
+      "task_id": "django__django-13447"
+    },
+    "B": {
+      "approved": true,
+      "behavior": "checkpoint_resume",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_django__django-13447_20260925T115357Z_2dd0cb10/B/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately addresses the issue and the reviewer\u2019s requested refinements. It explicitly separates collection/filtering in `_build_app_dict()` from sorting/shape construction in the new public `get_app_list()`, makes `get_app_list()` the single canonical source for template-facing app data, and clearly identifies which context variables are populated in `index()`, `app_index()`, and `each_context()`. It also adds the requested direct API test for `AdminSite.get_app_list()`, covers the `app_label` filtering and permission-based omission regression case, and states the API stability requirement that the returned structure remains the same except for the additive `model` key in each model dict. The implementation caution about serializability is also captured appropriately. As a plan, this is specific and complete enough."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 4,
+        "artifact_writes": 4,
+        "checkpoint_bytes_written": 24757,
+        "checkpoint_loads": 1,
+        "checkpoint_writes": 5,
+        "initial_drafts": 1,
+        "pre_interruption_token_usage": {
+          "input_tokens": 1148,
+          "output_tokens": 1071,
+          "requests": 2,
+          "total_tokens": 2219
+        },
+        "pre_interruption_wall_time_s": 18.686062291730195,
+        "recovery_token_usage": {
+          "input_tokens": 2994,
+          "output_tokens": 1241,
+          "requests": 2,
+          "total_tokens": 4235
+        },
+        "recovery_wall_time_s": 13.016702665947378,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 4142,
+          "output_tokens": 2312,
+          "requests": 4,
+          "total_tokens": 6454
+        },
+        "wall_time_s": 31.70295437471941
+      },
+      "recovery_validated": true,
+      "task_id": "django__django-13447"
+    }
+  },
+  "configuration": {
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "experiment_id": "swe_checkpoint_django__django-13447_20260925T115357Z_2dd0cb10",
+    "fault": "one-shot exception after persisted initial reviewer feedback",
+    "full_repo_tests_executed": false,
+    "generation_seed": null,
+    "manifest_sha256": "04580de639a13fa84ce9040b78f70dcfc972da53e84a890c9bc5aec99fc786d9",
+    "max_output_tokens": 2000,
+    "max_revisions": 3,
+    "outcome_scope": "checkpoint/artifact consistency and model-reviewed plan, not executable bug-fix correctness",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "pydantic": "2.13.5"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "protocol": "swe_metadata_checkpoint_v1",
+    "python": "3.10.7",
+    "requested_model": "gpt-5.4",
+    "source_sha256": "c5fe99af1fea6b6b331a5610559ebcd8ac1158cf478619fef449c7acce54b8ac",
+    "task_id": "django__django-13447",
+    "task_sha256": "da9a36e2bb9a7867ca97e452626c77de20367cdc88733a59aea86e619c0502cb",
+    "temperature": null,
+    "timing_scope": "end-to-end arm including setup, interrupted work, persistence, recovery, and local event logging"
+  },
+  "experiment_id": "swe_checkpoint_django__django-13447_20260925T115357Z_2dd0cb10",
+  "process_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_django__django-13447_20260925T115357Z_2dd0cb10/events.jsonl",
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_django__django-13447_20260925T115357Z_2dd0cb10",
+  "schema_version": 2,
+  "task_id": "django__django-13447",
+  "task_metadata": {
+    "base_commit": "0456d3e42795481a186db05719300691fe2a1029",
+    "benchmark": "SWE-bench Lite",
+    "execution_mode": "metadata_plan_review_with_disk_checkpoint",
+    "full_repo_tests_executed": false,
+    "repo": "django/django",
+    "source": "swe_bench_lite",
+    "swe_bench_instance_id": "django__django-13447"
+  },
+  "workflow": "swe_metadata_checkpoint_v1"
+}

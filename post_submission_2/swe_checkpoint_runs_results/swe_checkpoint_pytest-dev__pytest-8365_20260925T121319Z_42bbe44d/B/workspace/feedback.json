@@ -1,0 +1,8 @@
+[
+  "The plan is solid and correctly targets `_pytest/tmpdir.py`, preserves existing fallback behavior, and scopes the change to the username-derived basetemp component.",
+  "A specific improvement: before choosing a sanitization rule, inspect the existing failing test `test_tmp_path_factory_handles_invalid_dir_characters` and mirror its exact expected transformed name. That reduces the risk of passing behaviorally but failing on naming expectations.",
+  "Another actionable refinement: prefer sanitizing the final username component with a small helper function, e.g. `_sanitize_username_for_path(name: str) -> str`, rather than inlining replacements where the path is built. That makes the behavior easier to test directly and less likely to affect unrelated tmpdir logic.",
+  "Be careful with replacement strategy: replacing invalid characters one-by-one can produce repeated separators like `contoso--john`. Consider either documenting that outcome as acceptable if tests allow it, or normalizing runs of replacement characters to a single `-`/`_` for cleaner directory names.",
+  "Add an explicit edge-case test for a username that sanitizes to an empty or all-punctuation result, to verify the fallback token behavior you mention. That would guard against introducing a new failure mode while fixing the Windows-domain case.",
+  "If possible within existing test patterns, assert not just that creation succeeds but that the computed basetemp stays under the system temp root and remains a single path component after `pytest-of-...`, which directly protects against accidental separator injection."
+]

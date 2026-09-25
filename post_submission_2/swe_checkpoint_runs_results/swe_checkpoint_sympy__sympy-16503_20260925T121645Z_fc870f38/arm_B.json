@@ -1,0 +1,43 @@
+{
+  "approved": true,
+  "behavior": "checkpoint_resume",
+  "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_sympy__sympy-16503_20260925T121645Z_fc870f38/B/checkpoint.json",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan adequately incorporates the reviewer\u2019s requested refinements and stays appropriately scoped to the reported issue. It now explicitly compares `Sum._pretty` with `Product` and `Integral`, adds a clear localization step to distinguish a `Sum`-specific baseline problem from generic `prettyForm` horizontal composition, and avoids prematurely assuming the exact reference row beyond matching existing expectations and correct `Add` alignment. It also strengthens regression coverage by calling for exact multiline expectations for `Sum(...) + 3`, including both unicode and ASCII paths if exercised, while checking nearby tall-operator and additive pretty-print behavior for regressions. As a plan, this is concrete and targeted enough to guide implementation without overcommitting to a specific fix location before inspection."
+  },
+  "final_stage": "approved",
+  "metrics": {
+    "agent_runs": 4,
+    "artifact_writes": 4,
+    "checkpoint_bytes_written": 18906,
+    "checkpoint_loads": 1,
+    "checkpoint_writes": 5,
+    "initial_drafts": 1,
+    "pre_interruption_token_usage": {
+      "input_tokens": 2755,
+      "output_tokens": 833,
+      "requests": 2,
+      "total_tokens": 3588
+    },
+    "pre_interruption_wall_time_s": 11.832874082960188,
+    "recovery_token_usage": {
+      "input_tokens": 4139,
+      "output_tokens": 898,
+      "requests": 2,
+      "total_tokens": 5037
+    },
+    "recovery_wall_time_s": 12.184806333389133,
+    "revisions": 1,
+    "token_usage": {
+      "input_tokens": 6894,
+      "output_tokens": 1731,
+      "requests": 4,
+      "total_tokens": 8625
+    },
+    "wall_time_s": 24.01781770819798
+  },
+  "recovery_validated": true,
+  "task_id": "sympy__sympy-16503"
+}

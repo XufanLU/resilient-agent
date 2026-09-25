@@ -1,0 +1,28 @@
+{
+  "approved": true,
+  "artifact_hashes": {
+    "feedback.json": "b682864fde65e4c600a08db6bc8b5c3d64c4e7ec8c2688bfaea9ca08d7e321ee",
+    "plan_v1.md": "1a81ed92bfa13b3d974730e555d49ca3c532414eb9b7b061f39fb169570de952",
+    "plan_v2.md": "f9f1e25b008b881ee2f93ce6e5b36186eb896d887b9c85ffa7094873f0deab45",
+    "review_v2.json": "091fc587715acab4e4e11b4c28d24f126eee3308aeefdf1d266b1f59e565683a"
+  },
+  "diagnosis": "The bug is narrowly in `BaseFormSet.empty_form`. That path intentionally forces `empty_permitted=True` for the prototype/extra template form, but `get_form_kwargs(None)` can already carry a caller-provided `empty_permitted` from `form_kwargs`. Passing both creates the reported failure during empty-form construction/rendering. The fix should therefore be limited to sanitizing kwargs only for `empty_form`, preserving all non-`empty_form` behavior.",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan adequately addresses the issue and the reviewer feedback as a plan. It keeps the fix narrowly scoped to `BaseFormSet.empty_form`, explicitly removes conflicting `empty_permitted` from `get_form_kwargs(None)` before passing the formset-controlled value, and adds the requested explanatory comment. It also tightens test scope to the actual regression by covering both renderer variants, both caller-supplied boolean values, asserting the resulting `empty_form.empty_permitted is True`, and exercising the rendering path that triggered the reported crash. The plan also avoids broader semantic claims or refactors outside `empty_form`, which matches the stated caution."
+  },
+  "next_action": "done",
+  "plan": "1. Update `django/forms/formsets.py` in `BaseFormSet.empty_form`.\n   - Take a copy of `self.get_form_kwargs(None)` before instantiating the form.\n   - Remove `empty_permitted` from that copied dict with `pop('empty_permitted', None)`.\n   - Instantiate the empty form with the sanitized kwargs plus the formset-controlled `empty_permitted=True`.\n   - Add a short comment explaining that `empty_form` is always controlled by the formset and must not inherit caller-supplied `empty_permitted`.\n\n2. Keep the change tightly scoped.\n   - Do not alter `get_form_kwargs()` generally.\n   - Do not refactor normal form construction paths.\n   - Preserve existing behavior for non-`empty_form` code paths.\n\n3. Add regression tests in `tests/forms_tests/tests/test_formsets.py`.\n   - Extend both `FormsFormsetTestCase` and `Jinja2FormsFormsetTestCase` coverage.\n   - For each renderer variant, create a formset with `form_kwargs={'empty_permitted': True}` and another with `form_kwargs={'empty_permitted': False}`.\n   - Access `formset.empty_form` and assert `formset.empty_form.empty_permitted is True` in both cases.\n   - Also exercise the reported crash path by rendering the empty form, e.g. `str(formset.empty_form)` or the equivalent renderer/template path used in that test class, so the test directly covers rendering rather than only construction/no-exception.\n\n4. Regression checks to expect.\n   - Existing `test_form_kwargs_empty_form` behavior should remain intact.\n   - Standard and Jinja2 formset rendering should continue to work.\n   - Management-form and general formset rendering tests already provide surrounding coverage, so no broader new tests are needed beyond the targeted empty-form conflict cases.",
+  "plan_version": 2,
+  "reviewer_feedback": [
+    "The proposed fix is well targeted: the bug is specifically about `empty_form` forcing `empty_permitted=True` while `get_form_kwargs(None)` may already include that key, so sanitizing kwargs only in `BaseFormSet.empty_form` matches the issue without changing normal form construction semantics.",
+    "One actionable improvement: make the tests assert the regression mechanism directly, not just \u201cno exception\u201d. For each renderer variant, construct a formset with `form_kwargs={'empty_permitted': True}` and `False`, then access `formset.empty_form` and assert `empty_form.empty_permitted is True`. If the original failure happens during rendering, also include a render/assert path such as `str(formset.empty_form)` or rendering `{{ formset.empty_form }}` so the test covers the reported template crash path.",
+    "Another concrete improvement: add a short comment in the `empty_form` implementation explaining why `empty_permitted` is removed from `get_form_kwargs(None)` before form instantiation\u2014namely that `empty_form` is always controlled by the formset and should not inherit caller-provided `empty_permitted`. That will help prevent future regressions.",
+    "Be careful with the wording \u201cregular form construction still respects `form_kwargs['empty_permitted']` if that is currently supported elsewhere.\u201d Since source is unavailable here, the safer plan is to preserve existing behavior for non-`empty_form` code paths and avoid broad refactors beyond the `empty_form` kwargs merge.",
+    "Test scope can likely be narrower than the current plan suggests. The listed pass-to-pass coverage already exercises management form rendering and general empty/unbound formset behavior, so the new regression tests should focus on the conflict in `empty_form` construction and both standard/Jinja2 rendering paths rather than duplicating unrelated checks."
+  ],
+  "stage": "approved",
+  "task_id": "django__django-16041",
+  "task_sha256": "aca98c96fa4e1214524afd8a27251eb356755804550778606bbfbae51ea5934c"
+}

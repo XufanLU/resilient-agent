@@ -1,0 +1,8 @@
+[
+  "The plan is directionally correct: scope the behavior change to `BaseFormSet.empty_form` and preserve `_construct_form()` semantics for ordinary forms.",
+  "A specific improvement: explicitly account for the root cause that the empty form path likely passes `empty_permitted=True` alongside `**self.get_form_kwargs(None)`, so a user-provided `empty_permitted` causes Python argument collision before form construction. The fix should therefore avoid passing that key twice, not just rely on later override semantics.",
+  "Implementation detail to add: when building kwargs for `empty_form`, make a shallow copy of `get_form_kwargs(None)` before mutating it, then `pop('empty_permitted', None)` and instantiate with the formset-controlled value. That avoids mutating any shared dict returned by overrides of `get_form_kwargs()`.",
+  "Test plan is good, but tighten it by asserting both access and rendering paths, since the reported bug is specifically a rendering crash. For example, cover `formset.empty_form`, `str(formset.empty_form)`, and possibly `str(formset)`/template rendering in both default and Jinja2 cases.",
+  "Also add one focused non-regression assertion that non-empty constructed forms still honor `form_kwargs['empty_permitted']` if that is currently allowed, since the intended change is only for `empty_form`. That makes the behavioral boundary explicit.",
+  "Be careful with the expected exception type in the writeup: if `empty_form` currently does `Form(..., empty_permitted=True, **kwargs)` and `kwargs` also contains `empty_permitted`, Python would normally raise a duplicate-key call error rather than a `KeyError`. The plan should avoid overfitting to the issue text and instead test for successful rendering after the fix."
+]

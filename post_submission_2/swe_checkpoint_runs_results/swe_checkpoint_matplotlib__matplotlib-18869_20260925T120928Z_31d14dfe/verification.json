@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "experiment_id": "swe_checkpoint_matplotlib__matplotlib-18869_20260925T120928Z_31d14dfe",
+  "event_count": 48,
+  "arms": {
+    "A": {
+      "agent_calls": 6,
+      "events": 27,
+      "token_usage": {
+        "input_tokens": 8402,
+        "output_tokens": 3894,
+        "requests": 6,
+        "total_tokens": 12296
+      },
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 0,
+      "final_artifact_count": 4
+    },
+    "B": {
+      "agent_calls": 4,
+      "events": 20,
+      "token_usage": {
+        "input_tokens": 6330,
+        "output_tokens": 2458,
+        "requests": 4,
+        "total_tokens": 8788
+      },
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 1,
+      "final_artifact_count": 4
+    }
+  },
+  "summary_sha256": "4409864985d1257586421dbb4695f780b09c9ee8e284a67646a72a4a886f422b",
+  "events_sha256": "e270290f6b76682c8dfa42c72a5377c9698b22e47157a452014efc0362be652e",
+  "verifier_sha256": "ef24bc1184f891dd009bd1000ac01d91e30b14aa13b69f3259d10b049a21840d"
+}

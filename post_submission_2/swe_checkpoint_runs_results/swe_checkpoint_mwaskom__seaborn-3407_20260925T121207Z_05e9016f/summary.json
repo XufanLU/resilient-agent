@@ -1,0 +1,136 @@
+{
+  "B_minus_A_agent_runs": -2,
+  "B_minus_A_total_tokens": -7719,
+  "B_minus_A_wall_time_s": -13.425548250321299,
+  "arms": {
+    "A": {
+      "approved": true,
+      "behavior": "baseline_restart_from_zero",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_mwaskom__seaborn-3407_20260925T121207Z_05e9016f/A/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately addresses the reviewer feedback and stays appropriately scoped to the reported issue. It now explicitly inspects how `x_vars`, `y_vars`, and `diag_vars` are formed and preserved before `map_diag`, avoids prematurely prescribing `.loc[:, var]`, proposes an exact-label helper grounded in pandas MultiIndex semantics, and adds the requested classification pass over single-column lookups so only true exact-column accesses are changed. It also expands inspection to dropna/mask paths, strengthens the regression test beyond \u201cdoes not raise,\u201d and implicitly keeps the patch minimal by limiting changes to confirmed exact-label bugs rather than broad variable-inference normalization. As a plan, this is specific, actionable, and aligned with the fail-to-pass and regression-risk constraints."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 6,
+        "artifact_writes": 6,
+        "checkpoint_bytes_written": 31444,
+        "checkpoint_loads": 0,
+        "checkpoint_writes": 8,
+        "initial_drafts": 2,
+        "pre_interruption_token_usage": {
+          "input_tokens": 6632,
+          "output_tokens": 990,
+          "requests": 2,
+          "total_tokens": 7622
+        },
+        "pre_interruption_wall_time_s": 14.205078708007932,
+        "recovery_token_usage": {
+          "input_tokens": 15138,
+          "output_tokens": 2177,
+          "requests": 4,
+          "total_tokens": 17315
+        },
+        "recovery_wall_time_s": 28.15953475004062,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 21770,
+          "output_tokens": 3167,
+          "requests": 6,
+          "total_tokens": 24937
+        },
+        "wall_time_s": 42.36474862508476
+      },
+      "recovery_validated": null,
+      "task_id": "mwaskom__seaborn-3407"
+    },
+    "B": {
+      "approved": true,
+      "behavior": "checkpoint_resume",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_mwaskom__seaborn-3407_20260925T121207Z_05e9016f/B/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately addresses the reviewer feedback and stays scoped to the reported PairGrid/MultiIndex issue. It now expands beyond `map_diag` to audit all PairGrid extraction sites, proposes a single PairGrid-local helper with explicit MultiIndex/tuple semantics, calls out duplicate-column behavior, includes `pairplot` variable inference and hue exclusion/membership checks, and sharpens the regression strategy to cover both low-level PairGrid mapping and high-level `pairplot`. It also explicitly avoids unnecessary broader grid changes, which matches the issue scope."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 4,
+        "artifact_writes": 4,
+        "checkpoint_bytes_written": 21744,
+        "checkpoint_loads": 1,
+        "checkpoint_writes": 5,
+        "initial_drafts": 1,
+        "pre_interruption_token_usage": {
+          "input_tokens": 6703,
+          "output_tokens": 1046,
+          "requests": 2,
+          "total_tokens": 7749
+        },
+        "pre_interruption_wall_time_s": 16.74834479065612,
+        "recovery_token_usage": {
+          "input_tokens": 8488,
+          "output_tokens": 981,
+          "requests": 2,
+          "total_tokens": 9469
+        },
+        "recovery_wall_time_s": 12.190702541731298,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 15191,
+          "output_tokens": 2027,
+          "requests": 4,
+          "total_tokens": 17218
+        },
+        "wall_time_s": 28.93920037476346
+      },
+      "recovery_validated": true,
+      "task_id": "mwaskom__seaborn-3407"
+    }
+  },
+  "configuration": {
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "experiment_id": "swe_checkpoint_mwaskom__seaborn-3407_20260925T121207Z_05e9016f",
+    "fault": "one-shot exception after persisted initial reviewer feedback",
+    "full_repo_tests_executed": false,
+    "generation_seed": null,
+    "manifest_sha256": "04580de639a13fa84ce9040b78f70dcfc972da53e84a890c9bc5aec99fc786d9",
+    "max_output_tokens": 2000,
+    "max_revisions": 3,
+    "outcome_scope": "checkpoint/artifact consistency and model-reviewed plan, not executable bug-fix correctness",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "pydantic": "2.13.5"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "protocol": "swe_metadata_checkpoint_v1",
+    "python": "3.10.7",
+    "requested_model": "gpt-5.4",
+    "source_sha256": "c5fe99af1fea6b6b331a5610559ebcd8ac1158cf478619fef449c7acce54b8ac",
+    "task_id": "mwaskom__seaborn-3407",
+    "task_sha256": "9dc667e663c5046f019e733a292d29261a3938684956f7ea992e911917b8dba0",
+    "temperature": null,
+    "timing_scope": "end-to-end arm including setup, interrupted work, persistence, recovery, and local event logging"
+  },
+  "experiment_id": "swe_checkpoint_mwaskom__seaborn-3407_20260925T121207Z_05e9016f",
+  "process_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_mwaskom__seaborn-3407_20260925T121207Z_05e9016f/events.jsonl",
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_mwaskom__seaborn-3407_20260925T121207Z_05e9016f",
+  "schema_version": 2,
+  "task_id": "mwaskom__seaborn-3407",
+  "task_metadata": {
+    "base_commit": "515286e02be3e4c0ff2ef4addb34a53c4a676ee4",
+    "benchmark": "SWE-bench Lite",
+    "execution_mode": "metadata_plan_review_with_disk_checkpoint",
+    "full_repo_tests_executed": false,
+    "repo": "mwaskom/seaborn",
+    "source": "swe_bench_lite",
+    "swe_bench_instance_id": "mwaskom__seaborn-3407"
+  },
+  "workflow": "swe_metadata_checkpoint_v1"
+}

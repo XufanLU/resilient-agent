@@ -1,0 +1,7 @@
+[
+  "The plan is sound and correctly narrows the fix to default basetemp generation, but it should be more explicit about where sanitization is applied: target the `pytest-of-<user>` component only, after the existing user-resolution/fallback helper returns a string, so you don't accidentally affect unrelated path construction.",
+  "Add a concrete test expectation for the reported Windows-style username: if the raw username is `contoso\\\\john_doe`, assert the derived basetemp uses a single path component such as `pytest-of-contoso-john_doe` or `pytest-of-contoso_john_doe`, rather than only asserting generic success. That makes the regression guard sharper.",
+  "Prefer implementing sanitization as a small dedicated helper function with a focused unit-style test, instead of inlining replacements inside tempdir creation logic. This will make fallback-related tests easier to preserve and reduces the chance of missing `os.altsep` or platform-specific invalid characters.",
+  "One subtle case to include in the plan: usernames may contain characters beyond separators, such as `:` or `?`, even on non-Windows hosts when values come from environment variables. A parametrized test over a few representative bad usernames would improve coverage beyond the single backslash case.",
+  "Be careful with the replacement strategy so the result cannot become empty or degenerate (for example if the username is only invalid characters). The plan should mention falling back to a safe default token in that case to keep directory creation deterministic."
+]

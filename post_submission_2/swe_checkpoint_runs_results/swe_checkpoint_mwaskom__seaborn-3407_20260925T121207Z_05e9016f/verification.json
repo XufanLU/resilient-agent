@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "experiment_id": "swe_checkpoint_mwaskom__seaborn-3407_20260925T121207Z_05e9016f",
+  "event_count": 48,
+  "arms": {
+    "A": {
+      "agent_calls": 6,
+      "events": 27,
+      "token_usage": {
+        "input_tokens": 21770,
+        "output_tokens": 3167,
+        "requests": 6,
+        "total_tokens": 24937
+      },
+      "cached_input_tokens": 2816,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 0,
+      "final_artifact_count": 4
+    },
+    "B": {
+      "agent_calls": 4,
+      "events": 20,
+      "token_usage": {
+        "input_tokens": 15191,
+        "output_tokens": 2027,
+        "requests": 4,
+        "total_tokens": 17218
+      },
+      "cached_input_tokens": 2816,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 1,
+      "final_artifact_count": 4
+    }
+  },
+  "summary_sha256": "f7b301cb86e22dc8f83ad5c6f2dd854e5cdc673aadb3ff9145ebf7a5dd2b7385",
+  "events_sha256": "0afe5d1e43ac2a05f232f0f6bdddf0d08e7a9c80a1352a5134cd48026f5a6aae",
+  "verifier_sha256": "ef24bc1184f891dd009bd1000ac01d91e30b14aa13b69f3259d10b049a21840d"
+}

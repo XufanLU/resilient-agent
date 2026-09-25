@@ -1,0 +1,28 @@
+{
+  "arm_order": [
+    "A",
+    "B"
+  ],
+  "experiment_id": "swe_checkpoint_django__django-11905_20260925T120714Z_cfedbdac",
+  "fault": "one-shot exception after persisted initial reviewer feedback",
+  "full_repo_tests_executed": false,
+  "generation_seed": null,
+  "manifest_sha256": "04580de639a13fa84ce9040b78f70dcfc972da53e84a890c9bc5aec99fc786d9",
+  "max_output_tokens": 2000,
+  "max_revisions": 3,
+  "outcome_scope": "checkpoint/artifact consistency and model-reviewed plan, not executable bug-fix correctness",
+  "packages": {
+    "openai": "2.7.1",
+    "openai-agents": "0.4.2",
+    "pydantic": "2.13.5"
+  },
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "protocol": "swe_metadata_checkpoint_v1",
+  "python": "3.10.7",
+  "requested_model": "gpt-5.4",
+  "source_sha256": "c5fe99af1fea6b6b331a5610559ebcd8ac1158cf478619fef449c7acce54b8ac",
+  "task_id": "django__django-11905",
+  "task_sha256": "402e932cf779ef46e373318f957f2c56eee11d974eb22b39ae142f14f023f260",
+  "temperature": null,
+  "timing_scope": "end-to-end arm including setup, interrupted work, persistence, recovery, and local event logging"
+}

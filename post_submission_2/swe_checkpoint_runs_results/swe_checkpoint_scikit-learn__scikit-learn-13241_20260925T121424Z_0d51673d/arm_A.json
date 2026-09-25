@@ -1,0 +1,43 @@
+{
+  "approved": true,
+  "behavior": "baseline_restart_from_zero",
+  "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-13241_20260925T121424Z_0d51673d/A/checkpoint.json",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan adequately addresses the reviewer feedback and the issue. It now identifies the need to inspect all eigenpair-producing KernelPCA branches and to place the sign stabilization at the final post-processing point after sorting/truncation, with care around zero-eigenvalue removal. It also correctly avoids assuming `svd_flip` is directly applicable, instead calling for orientation verification or equivalent custom logic based on the max-absolute loading, which handles the sign-indeterminacy concern more robustly. The test plan is improved: repeated fresh `fit_transform(X)` calls on a fixed dataset target the reported nondeterminism better, and the added `transform(X)` vs `fit_transform(X)` consistency check protects both stored eigenvectors and downstream projections. Finally, it keeps scope constrained to sign changes only and preserves the metadata-only caveat. As a plan, this is sufficiently specific and aligned with the task; approval here is only for planning adequacy, not implementation correctness or test results."
+  },
+  "final_stage": "approved",
+  "metrics": {
+    "agent_runs": 6,
+    "artifact_writes": 6,
+    "checkpoint_bytes_written": 32196,
+    "checkpoint_loads": 0,
+    "checkpoint_writes": 8,
+    "initial_drafts": 2,
+    "pre_interruption_token_usage": {
+      "input_tokens": 3516,
+      "output_tokens": 1114,
+      "requests": 2,
+      "total_tokens": 4630
+    },
+    "pre_interruption_wall_time_s": 18.37268933421001,
+    "recovery_token_usage": {
+      "input_tokens": 8568,
+      "output_tokens": 1904,
+      "requests": 4,
+      "total_tokens": 10472
+    },
+    "recovery_wall_time_s": 28.221589791122824,
+    "revisions": 1,
+    "token_usage": {
+      "input_tokens": 12084,
+      "output_tokens": 3018,
+      "requests": 6,
+      "total_tokens": 15102
+    },
+    "wall_time_s": 46.5944290002808
+  },
+  "recovery_validated": null,
+  "task_id": "scikit-learn__scikit-learn-13241"
+}

@@ -1,0 +1,8 @@
+[
+  "The plan is directionally correct and well-targeted to the documented bug: the key fix is to make the non-convergence path return empty `cluster_centers_indices` and all `-1` labels, while preserving warnings and `n_iter_`.",
+  "A specific improvement: explicitly identify and patch the final return/assignment point after exemplars are computed, not just the warning branch. In affinity propagation, stale exemplar indices can be produced before/without convergence, so the plan should require guarding any downstream label recomputation with `if not converged` and returning early (or forcing outputs) before exemplar refinement runs.",
+  "Also add one check in tests for dtype/shape, not just values: assert `cluster_centers_indices_.dtype.kind == 'i'`, `cluster_centers_indices_.shape == (0,)`, and `labels_.shape == (n_samples,)`. That will better enforce the documented contract.",
+  "Another useful addition is to inspect whether `fit` or `predict` assumes at least one center exists. The plan mentions this indirectly, but it would be stronger to call out that `cluster_centers_` should become an empty array of shape `(0, n_features)` for euclidean affinity, and remain absent or safely handled for precomputed affinity depending on current estimator conventions.",
+  "Since this is metadata-only planning, avoid phrasing like 'verify' via execution; instead say 'update regression tests to assert...' and 'inspect code paths for...' to keep claims grounded in the issue text rather than unobserved repo state.",
+  "Overall, the main missing safeguard is ensuring there is a single authoritative non-convergence outcome, so later code cannot overwrite `-1` labels with labels derived from provisional centers."
+]

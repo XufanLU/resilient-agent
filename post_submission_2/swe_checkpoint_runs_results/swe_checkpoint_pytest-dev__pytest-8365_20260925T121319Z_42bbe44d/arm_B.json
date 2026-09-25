@@ -1,0 +1,43 @@
+{
+  "approved": true,
+  "behavior": "checkpoint_resume",
+  "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_pytest-dev__pytest-8365_20260925T121319Z_42bbe44d/B/checkpoint.json",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan adequately addresses both the issue and the reviewer\u2019s refinements. It explicitly starts by checking the existing failing test to mirror the expected transformed name, scopes the change to `_pytest/tmpdir.py`, introduces a dedicated sanitization helper for the username-derived basetemp component, and preserves existing fallback behavior. It also calls out the separator-replacement/normalization question, adds the requested empty-or-invalid-result edge case, and includes assertions to ensure the result stays under the temp root and remains a single path component. As a plan, this is appropriately targeted and low-risk."
+  },
+  "final_stage": "approved",
+  "metrics": {
+    "agent_runs": 4,
+    "artifact_writes": 4,
+    "checkpoint_bytes_written": 20200,
+    "checkpoint_loads": 1,
+    "checkpoint_writes": 5,
+    "initial_drafts": 1,
+    "pre_interruption_token_usage": {
+      "input_tokens": 2970,
+      "output_tokens": 883,
+      "requests": 2,
+      "total_tokens": 3853
+    },
+    "pre_interruption_wall_time_s": 13.541507042013109,
+    "recovery_token_usage": {
+      "input_tokens": 4429,
+      "output_tokens": 862,
+      "requests": 2,
+      "total_tokens": 5291
+    },
+    "recovery_wall_time_s": 9.831687457859516,
+    "revisions": 1,
+    "token_usage": {
+      "input_tokens": 7399,
+      "output_tokens": 1745,
+      "requests": 4,
+      "total_tokens": 9144
+    },
+    "wall_time_s": 23.373294583056122
+  },
+  "recovery_validated": true,
+  "task_id": "pytest-dev__pytest-8365"
+}

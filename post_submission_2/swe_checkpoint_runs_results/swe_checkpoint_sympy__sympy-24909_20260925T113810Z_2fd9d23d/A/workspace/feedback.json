@@ -1,0 +1,9 @@
+[
+  "The plan is solid and appropriately narrow, but it assumes code inspection and verification steps you cannot actually perform here. Rephrase those as hypotheses from the issue text rather than confirmed behavior.",
+  "Specific actionable improvement: explicitly inspect `Prefix.__mul__` for a default path like `return self.scale_factor * other.scale_factor` or a `sympify`/`Mul` simplification that can collapse `milli * W` to `1` when `W` lacks expected prefix metadata. Call out that the fix should change only the non-prefix/non-scalar branch to delegate to symbolic multiplication, e.g. `Mul(self, other, evaluate=False)` or whatever representation `W*milli` already produces.",
+  "Add one more regression expectation beyond equality checks: assert the result is not a plain number/One for `milli*W` and `milli*volt`, since the reported bug is specifically accidental collapse to `1`.",
+  "Strengthen step 3 by defining the intended semantics more concretely: left-multiplication by a prefix should mirror right-multiplication on units/quantities, so if `W*milli` currently yields `watt*Prefix(...)`, then `milli*W` should produce an equivalent expression instead of trying to combine scale factors.",
+  "Include a caution that any prefix-prefix simplification should remain limited to actual `Prefix` operands; do not treat arbitrary objects with scale factors or dimensions as prefixes. That likely prevents this class of bug.",
+  "For tests, include both uppercase alias `W` and lowercase named unit `watt` if both exist in the module, because the issue report mixes symbolic aliasing and representation. This helps ensure the bug is not alias-specific.",
+  "Overall, the right minimal patch target is probably the operand-type dispatch in `Prefix.__mul__`/`__rmul__`: handle `Prefix` specially, maybe plain numbers specially, and otherwise fall back to symbolic multiplication rather than simplification."
+]

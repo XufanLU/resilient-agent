@@ -1,0 +1,136 @@
+{
+  "B_minus_A_agent_runs": -2,
+  "B_minus_A_total_tokens": -2418,
+  "B_minus_A_wall_time_s": -9.197635248769075,
+  "arms": {
+    "A": {
+      "approved": true,
+      "behavior": "baseline_restart_from_zero",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_sympy__sympy-21055_20260925T121748Z_03484dea/A/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately addresses the feedback and stays appropriately narrow. It prioritizes inspecting the existing refine dispatcher/handler naming before implementation, proposes a minimal local `arg` rule only for `Q.positive` and `Q.negative`, explicitly avoids riskier boundary cases (`zero`, nonnegative/nonpositive, generic real/complex), and treats `Piecewise` changes as a fallback rather than the primary fix. The test plan is focused and includes both direct `arg` regressions and the reported end-to-end `Piecewise` simplification, plus negative tests guarding against over-eager refinement. It also acknowledges preservation of nearby refine behavior without proposing broader logic changes or unverifiable claims."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 6,
+        "artifact_writes": 6,
+        "checkpoint_bytes_written": 31522,
+        "checkpoint_loads": 0,
+        "checkpoint_writes": 8,
+        "initial_drafts": 2,
+        "pre_interruption_token_usage": {
+          "input_tokens": 1608,
+          "output_tokens": 1155,
+          "requests": 2,
+          "total_tokens": 2763
+        },
+        "pre_interruption_wall_time_s": 15.566092166118324,
+        "recovery_token_usage": {
+          "input_tokens": 5241,
+          "output_tokens": 2325,
+          "requests": 4,
+          "total_tokens": 7566
+        },
+        "recovery_wall_time_s": 29.12322049960494,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 6849,
+          "output_tokens": 3480,
+          "requests": 6,
+          "total_tokens": 10329
+        },
+        "wall_time_s": 44.6894515408203
+      },
+      "recovery_validated": null,
+      "task_id": "sympy__sympy-21055"
+    },
+    "B": {
+      "approved": true,
+      "behavior": "checkpoint_resume",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_sympy__sympy-21055_20260925T121748Z_03484dea/B/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately incorporates the reviewer feedback and stays appropriately scoped to `refine()` rather than global `arg` evaluation. It now explicitly calls for verifying refine-dispatch mechanics before assuming registration changes, narrows the negative case to negative real assumptions rather than overgeneral `Q.negative` without validation, preserves caution around `arg(0)`, and adds the more direct regression assertion for `2*Abs(arg(a)) < pi` along with a negative-real test. It also notes reviewing analogous handlers for consistency and avoids unsupported assumptions about existing test coverage. As a plan, this is sufficiently concrete, localized, and aligned with the issue statement and listed test targets."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 4,
+        "artifact_writes": 4,
+        "checkpoint_bytes_written": 24593,
+        "checkpoint_loads": 1,
+        "checkpoint_writes": 5,
+        "initial_drafts": 1,
+        "pre_interruption_token_usage": {
+          "input_tokens": 1620,
+          "output_tokens": 1363,
+          "requests": 2,
+          "total_tokens": 2983
+        },
+        "pre_interruption_wall_time_s": 18.672863457817584,
+        "recovery_token_usage": {
+          "input_tokens": 3738,
+          "output_tokens": 1190,
+          "requests": 2,
+          "total_tokens": 4928
+        },
+        "recovery_wall_time_s": 16.818796833977103,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 5358,
+          "output_tokens": 2553,
+          "requests": 4,
+          "total_tokens": 7911
+        },
+        "wall_time_s": 35.491816292051226
+      },
+      "recovery_validated": true,
+      "task_id": "sympy__sympy-21055"
+    }
+  },
+  "configuration": {
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "experiment_id": "swe_checkpoint_sympy__sympy-21055_20260925T121748Z_03484dea",
+    "fault": "one-shot exception after persisted initial reviewer feedback",
+    "full_repo_tests_executed": false,
+    "generation_seed": null,
+    "manifest_sha256": "04580de639a13fa84ce9040b78f70dcfc972da53e84a890c9bc5aec99fc786d9",
+    "max_output_tokens": 2000,
+    "max_revisions": 3,
+    "outcome_scope": "checkpoint/artifact consistency and model-reviewed plan, not executable bug-fix correctness",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "pydantic": "2.13.5"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "protocol": "swe_metadata_checkpoint_v1",
+    "python": "3.10.7",
+    "requested_model": "gpt-5.4",
+    "source_sha256": "c5fe99af1fea6b6b331a5610559ebcd8ac1158cf478619fef449c7acce54b8ac",
+    "task_id": "sympy__sympy-21055",
+    "task_sha256": "a13d93abad22b01333e58f3a45914acd4496c578236e94536d7cf4e95325e218",
+    "temperature": null,
+    "timing_scope": "end-to-end arm including setup, interrupted work, persistence, recovery, and local event logging"
+  },
+  "experiment_id": "swe_checkpoint_sympy__sympy-21055_20260925T121748Z_03484dea",
+  "process_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_sympy__sympy-21055_20260925T121748Z_03484dea/events.jsonl",
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_sympy__sympy-21055_20260925T121748Z_03484dea",
+  "schema_version": 2,
+  "task_id": "sympy__sympy-21055",
+  "task_metadata": {
+    "base_commit": "748ce73479ee2cd5c861431091001cc18943c735",
+    "benchmark": "SWE-bench Lite",
+    "execution_mode": "metadata_plan_review_with_disk_checkpoint",
+    "full_repo_tests_executed": false,
+    "repo": "sympy/sympy",
+    "source": "swe_bench_lite",
+    "swe_bench_instance_id": "sympy__sympy-21055"
+  },
+  "workflow": "swe_metadata_checkpoint_v1"
+}

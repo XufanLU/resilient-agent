@@ -1,0 +1,9 @@
+[
+  "The plan is directionally good: it addresses both parts of the issue by exposing a public app-list API and including the model class in each model entry without changing existing keys or ordering semantics.",
+  "A specific improvement: separate the sorting responsibility explicitly. Keep `_build_app_dict()` focused on collection/filtering and put all app/model sorting into `get_app_list()`. Then update `index()`, `app_index()`, and `each_context()` to call only `get_app_list()`. This reduces duplication and makes the new public API the single canonical source for template-facing app data.",
+  "Be careful with step 3: `each_context()` likely exposes `available_apps`, but `app_index()` may use `app_list` for a single app. The plan should explicitly note which context variable is populated in each code path so no caller is left on the old structure.",
+  "Add one more actionable regression target: verify the new `get_app_list(request, app_label=None)` preserves the current filtering behavior for a specific `app_label`, including permission-based omission when an app has no visible models.",
+  "Since this is a new public method, the plan should also call out API shape stability: return the same list-of-app-dicts structure as current templates expect, with the only additive change being `model` inside each model dict.",
+  "It would help to add a test directly for `AdminSite.get_app_list()` rather than relying only on view/context tests. That would pin the new public API and make future refactors safer.",
+  "Good caution on non-breaking template behavior. One more implementation caution: adding the raw model class into the dict is fine for Python consumers, but ensure no code assumes the structure is fully serializable; this is probably acceptable because admin context data is template-facing, not JSON-facing."
+]

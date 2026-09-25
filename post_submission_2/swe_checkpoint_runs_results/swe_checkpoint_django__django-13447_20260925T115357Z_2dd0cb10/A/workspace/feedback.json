@@ -1,0 +1,8 @@
+[
+  "The plan is directionally correct, but it assumes `each_context()` should call `get_app_list()`. Be careful there: if current behavior relies on `_build_app_dict()` for `available_apps`, changing the call path could subtly alter filtering or ordering. A safer plan is to first refactor `get_app_list()` as a thin public wrapper over existing logic, then update callers only if the returned structure is confirmed to match existing expectations exactly.",
+  "Add one explicit compatibility step: preserve `_build_app_dict(request, label=None)` semantics and have `get_app_list()` delegate to it, rather than moving logic wholesale at first. That minimizes risk for any internal callers and makes the public API additive.",
+  "Be more specific about the sorting contract in tests. Since the issue mentions making a private helper public and enriching entries, the regression coverage should assert that app order and model order remain unchanged, not just that the new `model` key exists.",
+  "Include a concrete test for the `app_label` argument on `get_app_list(request, app_label=...)`, since the proposal introduces that public parameter and `app_index()` depends on it.",
+  "One actionable improvement: split step 1 into two phases\u2014(a) add `get_app_list()` as a wrapper returning the current list structure, with no caller changes; (b) once shape parity is established, switch `index()`, `app_index()`, and possibly `each_context()` to use it. This reduces regression risk and makes review easier.",
+  "In the test plan, avoid implying verification beyond the known failing test. Since the issue specifically mentions `test_available_apps`, prioritize updating that assertion and add the new `get_app_list()` coverage as additive regression protection."
+]

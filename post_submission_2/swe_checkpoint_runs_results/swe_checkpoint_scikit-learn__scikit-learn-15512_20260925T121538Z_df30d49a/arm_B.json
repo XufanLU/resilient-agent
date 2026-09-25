@@ -1,0 +1,43 @@
+{
+  "approved": true,
+  "behavior": "checkpoint_resume",
+  "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-15512_20260925T121538Z_df30d49a/B/checkpoint.json",
+  "final_review": {
+    "approved": true,
+    "feedback": [],
+    "rationale": "The revised plan adequately incorporates the reviewer feedback and stays aligned with the issue. It now explicitly targets the likely bad post-loop fallback in the low-level function, separates the three important outcomes (converged, max-iter non-converged, degenerate/equal-similarity), and includes estimator-state review for `predict` without assuming unavailable source details. The regression plan is also strengthened with `n_iter_ == max_iter`, dtype/shape sentinel checks, and a function-level test to keep the public function and estimator consistent. As a plan, this is sufficiently concrete and well-scoped to the documented bug while guarding the listed pass-to-pass cases."
+  },
+  "final_stage": "approved",
+  "metrics": {
+    "agent_runs": 4,
+    "artifact_writes": 4,
+    "checkpoint_bytes_written": 22809,
+    "checkpoint_loads": 1,
+    "checkpoint_writes": 5,
+    "initial_drafts": 1,
+    "pre_interruption_token_usage": {
+      "input_tokens": 2617,
+      "output_tokens": 981,
+      "requests": 2,
+      "total_tokens": 3598
+    },
+    "pre_interruption_wall_time_s": 13.079964290838689,
+    "recovery_token_usage": {
+      "input_tokens": 4422,
+      "output_tokens": 1121,
+      "requests": 2,
+      "total_tokens": 5543
+    },
+    "recovery_wall_time_s": 14.106345500331372,
+    "revisions": 1,
+    "token_usage": {
+      "input_tokens": 7039,
+      "output_tokens": 2102,
+      "requests": 4,
+      "total_tokens": 9141
+    },
+    "wall_time_s": 27.186454750131816
+  },
+  "recovery_validated": true,
+  "task_id": "scikit-learn__scikit-learn-15512"
+}

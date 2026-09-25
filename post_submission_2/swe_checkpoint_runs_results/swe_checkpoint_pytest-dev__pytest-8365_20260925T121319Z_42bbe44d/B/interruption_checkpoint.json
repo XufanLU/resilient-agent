@@ -1,0 +1,23 @@
+{
+  "approved": false,
+  "artifact_hashes": {
+    "feedback.json": "54b5ced3cf79fe182bedb3369b423779922d1fdfa6d064b834f89315a6f4f7ff",
+    "plan_v1.md": "9af16f7222f25b3fabf639ef7e8eef9aa42463d285747cf67ba76a0be18c6152"
+  },
+  "diagnosis": "`tmpdir`/`tmp_path_factory` basetemp naming appears to incorporate `getpass.getuser()` into a path segment like `pytest-of-<user>`. On Windows, values such as `contoso\\john_doe` are being used verbatim, so the backslash is interpreted as a path separator and directory creation fails. The new failing test strongly suggests pytest should sanitize the username before using it in the temp root path, while preserving existing numbered-dir behavior and current relative-path validation in `mktemp`.\n\nLikely code area: the temp-path factory / basetemp resolution logic in `_pytest/tmpdir.py`, specifically wherever the per-user temp root name is built from `getpass.getuser()` (and possibly fallback handling around UID lookup). The fix should be narrowly scoped to the username-derived directory component, not to arbitrary user-supplied `mktemp` names, since those already have dedicated validation covered by the existing passing tests.",
+  "final_review": null,
+  "next_action": "revise_plan",
+  "plan": "1. Locate the helper in `_pytest/tmpdir.py` that computes the default basetemp under the system temp dir, likely producing something like `pytest-of-<user>`.\n2. Introduce a small sanitization step for the username before interpolating it into a directory name.\n   - Replace path separators and other characters invalid/problematic in filenames with a safe replacement such as `-` or `_`.\n   - At minimum handle both `os.sep`/`os.altsep` and Windows-illegal filename characters (`<>:\"/\\\\|?*`), since the reported failure is caused by `\\` but broader sanitization avoids similar issues.\n   - Keep the transformation deterministic and local to the username-derived basetemp component.\n3. Preserve existing fallback behavior if username lookup fails or UID cannot be resolved; only sanitize the successful username string path component.\n4. Add/adjust tests in `testing/test_tmpdir.py` around `tmp_path_factory` basetemp creation:\n   - Mock/monkeypatch `getpass.getuser()` (or the local helper) to return `contoso\\john_doe`.\n   - Assert that basetemp creation succeeds and that the resulting path does not embed the backslash as a path separator.\n   - If the new failing test already exists, align implementation to its expected sanitized output rather than inventing a new naming convention.\n5. Regression checks to keep in mind:\n   - Existing tmpdir/numbered-dir tests should still pass unchanged.\n   - No changes to `mktemp` path validation semantics.\n   - Sanitization should not accidentally collapse to empty or special names; if needed, fall back to a generic token when the sanitized username becomes empty.",
+  "plan_version": 1,
+  "reviewer_feedback": [
+    "The plan is solid and correctly targets `_pytest/tmpdir.py`, preserves existing fallback behavior, and scopes the change to the username-derived basetemp component.",
+    "A specific improvement: before choosing a sanitization rule, inspect the existing failing test `test_tmp_path_factory_handles_invalid_dir_characters` and mirror its exact expected transformed name. That reduces the risk of passing behaviorally but failing on naming expectations.",
+    "Another actionable refinement: prefer sanitizing the final username component with a small helper function, e.g. `_sanitize_username_for_path(name: str) -> str`, rather than inlining replacements where the path is built. That makes the behavior easier to test directly and less likely to affect unrelated tmpdir logic.",
+    "Be careful with replacement strategy: replacing invalid characters one-by-one can produce repeated separators like `contoso--john`. Consider either documenting that outcome as acceptable if tests allow it, or normalizing runs of replacement characters to a single `-`/`_` for cleaner directory names.",
+    "Add an explicit edge-case test for a username that sanitizes to an empty or all-punctuation result, to verify the fallback token behavior you mention. That would guard against introducing a new failure mode while fixing the Windows-domain case.",
+    "If possible within existing test patterns, assert not just that creation succeeds but that the computed basetemp stays under the system temp root and remains a single path component after `pytest-of-...`, which directly protects against accidental separator injection."
+  ],
+  "stage": "review_feedback_received",
+  "task_id": "pytest-dev__pytest-8365",
+  "task_sha256": "e4a58147f29ade4c71144fefb9e97623d9957eebc47459867c7b01ed5f74315d"
+}

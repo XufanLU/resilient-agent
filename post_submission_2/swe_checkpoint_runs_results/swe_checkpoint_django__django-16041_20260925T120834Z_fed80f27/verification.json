@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "experiment_id": "swe_checkpoint_django__django-16041_20260925T120834Z_fed80f27",
+  "event_count": 48,
+  "arms": {
+    "A": {
+      "agent_calls": 6,
+      "events": 27,
+      "token_usage": {
+        "input_tokens": 18027,
+        "output_tokens": 2560,
+        "requests": 6,
+        "total_tokens": 20587
+      },
+      "cached_input_tokens": 1792,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 0,
+      "final_artifact_count": 4
+    },
+    "B": {
+      "agent_calls": 4,
+      "events": 20,
+      "token_usage": {
+        "input_tokens": 12225,
+        "output_tokens": 1398,
+        "requests": 4,
+        "total_tokens": 13623
+      },
+      "cached_input_tokens": 1792,
+      "reasoning_tokens": 0,
+      "checkpoint_loads": 1,
+      "final_artifact_count": 4
+    }
+  },
+  "summary_sha256": "024976ef39969ca5bef01739c414f3bd12ede166cc57c61c5eae237890eaf052",
+  "events_sha256": "8f54c883c1997f8620a2d42f3ee1cae32463d834ce4fd9683722cdb74080189d",
+  "verifier_sha256": "ef24bc1184f891dd009bd1000ac01d91e30b14aa13b69f3259d10b049a21840d"
+}

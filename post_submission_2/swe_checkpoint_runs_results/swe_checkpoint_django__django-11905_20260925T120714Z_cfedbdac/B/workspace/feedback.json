@@ -1,0 +1,8 @@
+[
+  "The plan is solid, but it assumes `get_prep_lookup()` is the right hook without first checking when `IsNull` currently validates or how `test_iterator` expects the exception to surface. A better first step is to trace the lookup construction path for `__isnull` and confirm whether validation should happen at queryset construction or compilation/evaluation time.",
+  "Add a concrete step to inspect existing exception patterns in nearby lookups and Django tests, so the new error uses the same exception class and wording conventions rather than inventing a message ad hoc.",
+  "Be more explicit about strict bool acceptance: `isinstance(rhs, bool)` is fine for rejecting `0`/`1`, but the plan should note that this also rejects boolean-like objects, which is likely intended here. Call that out so the behavior change is deliberate.",
+  "Include a targeted regression check for join behavior: invalid non-boolean RHS should fail before any `isnull`-specific join promotion logic can matter, while valid `True`/`False` must preserve existing INNER/OUTER JOIN handling.",
+  "Testing can be sharpened: besides bad literals like `1`, `'true'`, and `None`, include a custom object with truthiness (`__bool__`) to prove the code no longer relies on truthy/falsey coercion.",
+  "One actionable improvement: split step 4 into two distinct test expectations depending on actual validation timing\u2014one test asserting queryset construction raises if validation is early, or alternatively assert that `str(qs.query)` / iteration raises if validation remains lazy. This will make the fix align cleanly with the existing `test_iterator` failure instead of leaving timing ambiguous."
+]

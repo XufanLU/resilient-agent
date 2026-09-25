@@ -1,0 +1,136 @@
+{
+  "B_minus_A_agent_runs": -2,
+  "B_minus_A_total_tokens": -4747,
+  "B_minus_A_wall_time_s": -19.81378254154697,
+  "arms": {
+    "A": {
+      "approved": true,
+      "behavior": "baseline_restart_from_zero",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-13241_20260925T121424Z_0d51673d/A/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately addresses the reviewer feedback and the issue. It now identifies the need to inspect all eigenpair-producing KernelPCA branches and to place the sign stabilization at the final post-processing point after sorting/truncation, with care around zero-eigenvalue removal. It also correctly avoids assuming `svd_flip` is directly applicable, instead calling for orientation verification or equivalent custom logic based on the max-absolute loading, which handles the sign-indeterminacy concern more robustly. The test plan is improved: repeated fresh `fit_transform(X)` calls on a fixed dataset target the reported nondeterminism better, and the added `transform(X)` vs `fit_transform(X)` consistency check protects both stored eigenvectors and downstream projections. Finally, it keeps scope constrained to sign changes only and preserves the metadata-only caveat. As a plan, this is sufficiently specific and aligned with the task; approval here is only for planning adequacy, not implementation correctness or test results."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 6,
+        "artifact_writes": 6,
+        "checkpoint_bytes_written": 32196,
+        "checkpoint_loads": 0,
+        "checkpoint_writes": 8,
+        "initial_drafts": 2,
+        "pre_interruption_token_usage": {
+          "input_tokens": 3516,
+          "output_tokens": 1114,
+          "requests": 2,
+          "total_tokens": 4630
+        },
+        "pre_interruption_wall_time_s": 18.37268933421001,
+        "recovery_token_usage": {
+          "input_tokens": 8568,
+          "output_tokens": 1904,
+          "requests": 4,
+          "total_tokens": 10472
+        },
+        "recovery_wall_time_s": 28.221589791122824,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 12084,
+          "output_tokens": 3018,
+          "requests": 6,
+          "total_tokens": 15102
+        },
+        "wall_time_s": 46.5944290002808
+      },
+      "recovery_validated": null,
+      "task_id": "scikit-learn__scikit-learn-13241"
+    },
+    "B": {
+      "approved": true,
+      "behavior": "checkpoint_resume",
+      "checkpoint_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-13241_20260925T121424Z_0d51673d/B/checkpoint.json",
+      "final_review": {
+        "approved": true,
+        "feedback": [],
+        "rationale": "The revised plan adequately addresses the reviewer feedback and the issue as a planning document. It now specifies the correct insertion point for deterministic sign normalization (after ordering, truncation, and zero-eigenvalue filtering), states that the normalization must be applied to the stored fitted eigenvector attribute itself (`self.alphas_`) so `transform` and `fit_transform` inherit the same orientation, and clarifies an acceptable `svd_flip` usage/adaptation pattern for column-wise eigenvectors. It also explicitly covers multiple eigensolver backends, strengthens the regression-test plan with repeated-run checks for `dense` and optionally `arpack`, and includes the important caveat about tied eigenvalues/eigenspace rotations so the tests should use non-degenerate data. As a plan, this is concrete and aligned with the supplied task and feedback."
+      },
+      "final_stage": "approved",
+      "metrics": {
+        "agent_runs": 4,
+        "artifact_writes": 4,
+        "checkpoint_bytes_written": 21508,
+        "checkpoint_loads": 1,
+        "checkpoint_writes": 5,
+        "initial_drafts": 1,
+        "pre_interruption_token_usage": {
+          "input_tokens": 3463,
+          "output_tokens": 942,
+          "requests": 2,
+          "total_tokens": 4405
+        },
+        "pre_interruption_wall_time_s": 15.42535062506795,
+        "recovery_token_usage": {
+          "input_tokens": 5023,
+          "output_tokens": 927,
+          "requests": 2,
+          "total_tokens": 5950
+        },
+        "recovery_wall_time_s": 11.355130041949451,
+        "revisions": 1,
+        "token_usage": {
+          "input_tokens": 8486,
+          "output_tokens": 1869,
+          "requests": 4,
+          "total_tokens": 10355
+        },
+        "wall_time_s": 26.780646458733827
+      },
+      "recovery_validated": true,
+      "task_id": "scikit-learn__scikit-learn-13241"
+    }
+  },
+  "configuration": {
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "experiment_id": "swe_checkpoint_scikit-learn__scikit-learn-13241_20260925T121424Z_0d51673d",
+    "fault": "one-shot exception after persisted initial reviewer feedback",
+    "full_repo_tests_executed": false,
+    "generation_seed": null,
+    "manifest_sha256": "04580de639a13fa84ce9040b78f70dcfc972da53e84a890c9bc5aec99fc786d9",
+    "max_output_tokens": 2000,
+    "max_revisions": 3,
+    "outcome_scope": "checkpoint/artifact consistency and model-reviewed plan, not executable bug-fix correctness",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "pydantic": "2.13.5"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "protocol": "swe_metadata_checkpoint_v1",
+    "python": "3.10.7",
+    "requested_model": "gpt-5.4",
+    "source_sha256": "c5fe99af1fea6b6b331a5610559ebcd8ac1158cf478619fef449c7acce54b8ac",
+    "task_id": "scikit-learn__scikit-learn-13241",
+    "task_sha256": "e6b2d7a41947c4050ffc77d45b5c089c294ca35d716fe4026f68f41a64f4727f",
+    "temperature": null,
+    "timing_scope": "end-to-end arm including setup, interrupted work, persistence, recovery, and local event logging"
+  },
+  "experiment_id": "swe_checkpoint_scikit-learn__scikit-learn-13241_20260925T121424Z_0d51673d",
+  "process_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-13241_20260925T121424Z_0d51673d/events.jsonl",
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/swe_checkpoint_runs/swe_checkpoint_scikit-learn__scikit-learn-13241_20260925T121424Z_0d51673d",
+  "schema_version": 2,
+  "task_id": "scikit-learn__scikit-learn-13241",
+  "task_metadata": {
+    "base_commit": "f8b108d0c6f2f82b2dc4e32a6793f9d9ac9cf2f4",
+    "benchmark": "SWE-bench Lite",
+    "execution_mode": "metadata_plan_review_with_disk_checkpoint",
+    "full_repo_tests_executed": false,
+    "repo": "scikit-learn/scikit-learn",
+    "source": "swe_bench_lite",
+    "swe_bench_instance_id": "scikit-learn__scikit-learn-13241"
+  },
+  "workflow": "swe_metadata_checkpoint_v1"
+}

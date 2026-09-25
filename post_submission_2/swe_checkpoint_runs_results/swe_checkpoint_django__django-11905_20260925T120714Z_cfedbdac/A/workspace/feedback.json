@@ -1,0 +1,8 @@
+[
+  "The plan is directionally correct and appropriately scoped to `IsNull`, but it assumes the validation should happen in SQL generation. A more actionable improvement is to validate in `IsNull.get_prep_lookup()` or `process_rhs()` if available, so invalid RHS values fail earlier and consistently before join-planning/compilation paths are reached.",
+  "Be explicit about the bool check: prefer `type(self.rhs) is bool` rather than `isinstance(self.rhs, bool)` so integers `0`/`1` are rejected, since `bool` is a subclass of `int` in Python.",
+  "Strengthen the test plan by separating value-validation tests from behavioral tests: one test for each invalid RHS category (`1`, `0`, `'true'`, `'false'`, `None`) and a distinct regression test asserting valid `True`/`False` still produce correct queryset results, rather than only \u2018still work\u2019 generically.",
+  "The join-promotion note is sensible, but since source inspection is not available here, avoid planning any join-logic changes unless issue-specific evidence appears. Frame it as a non-goal: invalid `__isnull` RHS should be rejected before any join-type decisions matter.",
+  "Add one more concrete check to the plan: confirm the raised exception type/message is stable and targeted, e.g. `ValueError('__isnull lookup value must be True or False.')`, because one of the listed pass-to-pass tests is `test_error_messages`, so message regressions matter.",
+  "Minor gap: the current plan mentions preserving `can_use_none_as_rhs=True` behavior elsewhere, but it should also explicitly note that `None` must now be invalid specifically for `__isnull`, even though other lookups may accept it. That distinction should be reflected in tests."
+]
