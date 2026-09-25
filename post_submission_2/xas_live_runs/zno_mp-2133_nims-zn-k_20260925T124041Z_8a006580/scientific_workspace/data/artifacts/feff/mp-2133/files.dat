@@ -1,0 +1,31 @@
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Zn2 O2
+ Reduced formula:  ZnO
+ space group: (P6_3mc), space number:  (186)
+ abc:  3.250000   3.250000   5.210000
+ angles: 90.000000  90.000000 120.000000
+ sites: 4
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=30 Rmt= 1.284 Rnm= 1.409 K  shell
+ Pot 1 Z= 8 Rmt= 0.990 Rnm= 1.088
+ Pot 2 Z=30 Rmt= 1.286 Rnm= 1.414
+ Gam_ch=1.897E+00 H-L exch
+ Mu=-4.168E-01 kf=2.126E+00 Vint=-1.764E+01 Rs_int= 1.706
+ PATH  Rmax= 4.344,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+ -----------------------------------------------------------------------
+    file        sig2   amp ratio    deg    nlegs  r effective
+ feff0001.dat 0.00000   100.000     3.000     2   1.9745
+ feff0002.dat 0.00000    32.740     1.000     2   1.9902
+ feff0003.dat 0.00000    65.750     6.000     2   3.2104
+ feff0004.dat 0.00000    10.130     1.000     2   3.2198
+ feff0005.dat 0.00000    63.830     6.000     2   3.2500
+ feff0006.dat 0.00000     8.603     6.000     3   3.5876
+ feff0007.dat 0.00000     9.178     6.000     3   3.5876
+ feff0008.dat 0.00000     9.195     6.000     3   3.5876
+ feff0009.dat 0.00000     9.564     6.000     3   3.5995
+ feff0010.dat 0.00000    20.460    12.000     3   3.5995
+ feff0011.dat 0.00000    19.700     3.000     2   3.8028
+ feff0012.dat 0.00000    39.170     6.000     2   3.8110
+ feff0013.dat 0.00000     5.485     3.000     4   3.9491
+ feff0014.dat 0.00000     3.529     6.000     4   3.9491

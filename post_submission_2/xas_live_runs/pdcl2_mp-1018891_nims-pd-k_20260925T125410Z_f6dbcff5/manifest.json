@@ -1,0 +1,25 @@
+{
+  "protocol": "xas_live_full_usage_v1",
+  "requested_model": "gpt-5.4",
+  "arm_order": [
+    "A",
+    "B"
+  ],
+  "python": "3.12.14",
+  "packages": {
+    "openai": "2.7.1",
+    "openai-agents": "0.4.2",
+    "xraylarch": "2025.2.2.post26+gc21c0a59b",
+    "numpy": "2.5.3",
+    "scipy": "1.16.1",
+    "pydantic": "2.11.7"
+  },
+  "source_sha256": "ca6ce009e4de92877be459056d91d4ece3b93f3c619fe7a2855a9fcba720a143",
+  "original_test_sha256": "060e94dcc41436dfba18fe5f5cc0e645ae0ab56a30086154da89c03b3c6dbb9a",
+  "xas_sha256": "15fbfc3bf3f3d03c71df26c3e6c8a87b10098408363d5ea87f4610b76b67f29c",
+  "cache_policy": "fresh scientific workspace per pair; processed/FEFF artifacts shared A then B within pair, as in original comparison",
+  "token_scope": "all recorded model responses before interruption plus recovery; local fitting itself consumes no model tokens",
+  "timing_scope": "both invocations, cache clearing, synchronous usage logging, interrupted checkpoint snapshot; excludes final snapshot",
+  "automatic_request_retries": 0,
+  "tracing_disabled": true
+}

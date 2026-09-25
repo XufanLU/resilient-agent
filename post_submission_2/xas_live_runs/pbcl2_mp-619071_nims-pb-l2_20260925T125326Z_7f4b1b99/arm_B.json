@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 10.652108833193779,
+  "pre_interruption_wall_time_s": 4.590108666103333,
+  "recovery_wall_time_s": 6.062000167090446,
+  "pre_interruption_token_usage": {
+    "input_tokens": 661,
+    "output_tokens": 95,
+    "total_tokens": 756,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1698,
+    "output_tokens": 330,
+    "total_tokens": 2028,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2359,
+    "output_tokens": 425,
+    "total_tokens": 2784,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Energy shift \u0394E\u2080: 13.75 \u00b1 76.74 eV\n- Amplitude factor S\u2080\u00b2: 2129.07 \u00b1 21741.86\n- Path distance shift \u0394R: 0.253 \u00b1 1.738 \u00c5\n- Resulting path R: 3.163 \u00c5\n- Debye-Waller factor \u03c3\u00b2: 0.0886 \u00b1 0.2192 \u00c5\u00b2\n- Reduced \u03c7\u00b2: 3032.86\n- R-factor: 0.938\n\nAssessment:\n- The fit quality is poor and the parameter uncertainties are very large.\n- The extremely large S\u2080\u00b2 and high R-factor suggest this first-shell model is not reliably describing the data in its current form.\n\nIf you want, I can next help refine the fit setup or inspect the preprocessed XAS/FT to diagnose the mismatch.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "experiment_id": "cuwo4_mp-22773_nims-w-l2_20260925T124403Z_242acd6f",
+  "pair": {
+    "id": "cuwo4_mp-22773_nims-w-l2",
+    "formula": "CuWO4",
+    "material_id": "mp-22773",
+    "xas_path": "fixtures/W-L2_CuWO4_Si311_50ms_201201.txt",
+    "cif_file": "mp-22773.cif",
+    "xas_file": "W-L2_CuWO4_Si311_50ms_201201.txt"
+  },
+  "arms": {
+    "A": {
+      "wall_time_s": 11.808493125252426,
+      "pre_interruption_wall_time_s": 3.8713723751716316,
+      "recovery_wall_time_s": 7.937120750080794,
+      "pre_interruption_token_usage": {
+        "input_tokens": 660,
+        "output_tokens": 94,
+        "total_tokens": 754,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1693,
+        "output_tokens": 300,
+        "total_tokens": 1993,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2353,
+        "output_tokens": 394,
+        "total_tokens": 2747,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 14.06\n- R-factor: 0.0573\n\nBest-fit parameters:\n- S0\u00b2: -5488.16 \u00b1 7555.15\n- \u0394E0: -164.08 \u00b1 34.16 eV\n- \u03c3\u00b2: 0.02287 \u00b1 0.00664 \u00c5\u00b2\n- \u0394R: -0.07598 \u00b1 0.07252 \u00c5\n- Path distance R: 1.7478 \u00c5\n\nNote:\n- The R-factor is moderate, but the fitted S0\u00b2 and \u0394E0 are highly unphysical, so this first-shell fit is not reliable as-is.\n- Likely next step: constrain parameters or refine the fitting range/model.",
+      "data_loads": {
+        "raw_xas_imports": 1,
+        "processed_payload_loads": 1
+      },
+      "behavior": "baseline_restart_from_zero"
+    },
+    "B": {
+      "wall_time_s": 10.008618750143796,
+      "pre_interruption_wall_time_s": 4.3112865830771625,
+      "recovery_wall_time_s": 5.697332167066634,
+      "pre_interruption_token_usage": {
+        "input_tokens": 660,
+        "output_tokens": 94,
+        "total_tokens": 754,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1693,
+        "output_tokens": 307,
+        "total_tokens": 2000,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2353,
+        "output_tokens": 401,
+        "total_tokens": 2754,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 14.06\n- R-factor: 0.0573\n\nFitted parameters:\n- S0\u00b2: -5488.16 \u00b1 7555.15\n- \u0394E0: -164.08 \u00b1 34.16 eV\n- \u03c3\u00b2: 0.02287 \u00b1 0.00664 \u00c5\u00b2\n- \u0394R: -0.07598 \u00b1 0.07252 \u00c5\n- Path R: 1.74782 \u00c5\n\nNote:\n- The R-factor is modest, but the fitted S0\u00b2 and \u0394E0 are unphysical, suggesting this first-shell model or starting assumptions are not adequate for a reliable interpretation.\n\nIf you want, I can next help refine the fit range or prepare FEFF paths for a more constrained fit.",
+      "data_loads": {
+        "raw_xas_imports": 0,
+        "processed_payload_loads": 2
+      },
+      "behavior": "checkpoint_resume"
+    }
+  },
+  "configuration": {
+    "protocol": "xas_live_full_usage_v1",
+    "requested_model": "gpt-5.4",
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "python": "3.12.14",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "xraylarch": "2025.2.2.post26+gc21c0a59b",
+      "numpy": "2.5.3",
+      "scipy": "1.16.1",
+      "pydantic": "2.11.7"
+    },
+    "source_sha256": "ca6ce009e4de92877be459056d91d4ece3b93f3c619fe7a2855a9fcba720a143",
+    "original_test_sha256": "060e94dcc41436dfba18fe5f5cc0e645ae0ab56a30086154da89c03b3c6dbb9a",
+    "xas_sha256": "38116c17833c6b716f2d8eb97300cec8a10af94c7f822c8f3d641f3994430960",
+    "cache_policy": "fresh scientific workspace per pair; processed/FEFF artifacts shared A then B within pair, as in original comparison",
+    "token_scope": "all recorded model responses before interruption plus recovery; local fitting itself consumes no model tokens",
+    "timing_scope": "both invocations, cache clearing, synchronous usage logging, interrupted checkpoint snapshot; excludes final snapshot",
+    "automatic_request_retries": 0,
+    "tracing_disabled": true
+  },
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/xas_live_runs/cuwo4_mp-22773_nims-w-l2_20260925T124403Z_242acd6f",
+  "result_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/live_ab_results.jsonl",
+  "B_minus_A_wall_time_s": -1.7998743751086295,
+  "B_minus_A_total_tokens": 7,
+  "B_minus_A_raw_xas_imports": -1
+}

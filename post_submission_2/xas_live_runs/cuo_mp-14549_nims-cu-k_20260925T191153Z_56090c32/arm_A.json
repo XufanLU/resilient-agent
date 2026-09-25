@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 11.809784084092826,
+  "pre_interruption_wall_time_s": 5.125565334223211,
+  "recovery_wall_time_s": 6.684218749869615,
+  "pre_interruption_token_usage": {
+    "input_tokens": 658,
+    "output_tokens": 92,
+    "total_tokens": 750,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1687,
+    "output_tokens": 275,
+    "total_tokens": 1962,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2345,
+    "output_tokens": 367,
+    "total_tokens": 2712,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 179.38\n- R-factor: 0.1698\n\nFitted parameters:\n- S0\u00b2: 2.541 \u00b1 1.132\n- \u0394E0: -0.671 \u00b1 5.630 eV\n\nFirst-shell path:\n- Effective path distance R: 1.934 \u00c5\n- \u0394R: -0.183 \u00b1 0.035 \u00c5\n- \u03c3\u00b2: 0.00269 \u00b1 0.00544 \u00c5\u00b2\n\nOverall, the fit ran successfully, but the relatively large reduced \u03c7\u00b2 suggests the first-shell-only model may not fully capture the spectrum.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

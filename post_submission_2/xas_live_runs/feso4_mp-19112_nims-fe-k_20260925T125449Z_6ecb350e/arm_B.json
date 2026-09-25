@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 9.141395542304963,
+  "pre_interruption_wall_time_s": 3.881101875100285,
+  "recovery_wall_time_s": 5.260293667204678,
+  "pre_interruption_token_usage": {
+    "input_tokens": 656,
+    "output_tokens": 90,
+    "total_tokens": 746,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1670,
+    "output_tokens": 275,
+    "total_tokens": 1945,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2326,
+    "output_tokens": 365,
+    "total_tokens": 2691,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 202.25\n- R-factor: 0.2188\n\nFitted parameters:\n- S0\u00b2 = 5.36 \u00b1 3.20\n- \u0394E0 = 5.33 \u00b1 6.13 eV\n- First-shell \u0394R = 0.068 \u00b1 0.051 \u00c5\n- First-shell R = 2.083 \u00c5\n- \u03c3\u00b2 = 0.0124 \u00b1 0.0091 \u00c5\u00b2\n\nBrief note:\n- The fit converged, but the large reduced \u03c7\u00b2 and broad uncertainties suggest the first-shell-only model is not especially strong for this dataset.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

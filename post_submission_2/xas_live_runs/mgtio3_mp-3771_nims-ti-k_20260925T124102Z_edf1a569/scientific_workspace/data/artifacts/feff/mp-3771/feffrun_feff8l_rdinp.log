@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Mg2 Ti2 O6
+ Reduced formula:  MgTiO3
+ space group: (R-3), space number:  (148)
+ abc:  5.058498   5.058498   5.470982
+ angles: 62.464203  62.464211  59.999992
+ sites: 10

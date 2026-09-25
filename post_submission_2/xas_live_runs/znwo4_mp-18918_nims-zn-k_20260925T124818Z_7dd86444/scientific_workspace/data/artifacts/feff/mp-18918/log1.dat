@@ -1,0 +1,18 @@
+ Calculating potentials ...
+    free atom potential and density for atom type    0
+    free atom potential and density for atom type    1
+    free atom potential and density for atom type    2
+    free atom potential and density for atom type    3
+    initial state energy
+    overlapped potential and density for unique potential    0
+    overlapped potential and density for unique potential    1
+    overlapped potential and density for unique potential    2
+    overlapped potential and density for unique potential    3
+    muffin tin radii and interstitial parameters
+    : ipot, Norman radius, Muffin tin radius, Overlap
+         0  1.39088E+00  1.23038E+00  1.15000E+00
+         1  1.05789E+00  9.49234E-01  1.15000E+00
+         2  1.40252E+00  1.23566E+00  1.15000E+00
+         3  1.47366E+00  1.39569E+00  1.14989E+00
+    : mu_old=     3.881
+ Done with module 1: potentials.

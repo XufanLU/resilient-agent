@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Nb3 Si6
+ Reduced formula:  NbSi2
+ space group: (P6_222), space number:  (180)
+ abc:  4.806155   4.806155   6.586362
+ angles: 90.000000  90.000000 119.998347
+ sites: 9

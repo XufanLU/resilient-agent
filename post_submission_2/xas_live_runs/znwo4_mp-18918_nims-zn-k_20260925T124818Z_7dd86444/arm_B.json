@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 10.207532125059515,
+  "pre_interruption_wall_time_s": 3.913085415959358,
+  "recovery_wall_time_s": 6.294446709100157,
+  "pre_interruption_token_usage": {
+    "input_tokens": 660,
+    "output_tokens": 94,
+    "total_tokens": 754,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1691,
+    "output_tokens": 319,
+    "total_tokens": 2010,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2351,
+    "output_tokens": 413,
+    "total_tokens": 2764,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nConcise fit summary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 78.87\n- R-factor: 0.962\n\nFitted global parameters:\n- S0\u00b2 = -176.64 \u00b1 1027.52\n- \u0394E0 = 610.93 \u00b1 7.86 eV\n\nFirst-shell path result:\n- \u0394R = 4.309 \u00b1 0.267 \u00c5\n- Effective R = 6.109 \u00c5\n- \u03c3\u00b2 = -0.02037 \u00b1 0.12741 \u00c5\u00b2\n\nAssessment:\n- This fit is not physically reasonable: the negative S0\u00b2, very large \u0394E0, and negative \u03c3\u00b2 indicate a poor/unstable first-shell fit with the current setup.\n\nIf you want, I can next help diagnose this by checking preprocessing/normalization or regenerating FEFF paths before refitting.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

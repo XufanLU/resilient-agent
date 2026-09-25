@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 8.531712708063424,
+  "pre_interruption_wall_time_s": 3.306763917207718,
+  "recovery_wall_time_s": 5.224948790855706,
+  "pre_interruption_token_usage": {
+    "input_tokens": 662,
+    "output_tokens": 96,
+    "total_tokens": 758,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1707,
+    "output_tokens": 294,
+    "total_tokens": 2001,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2369,
+    "output_tokens": 390,
+    "total_tokens": 2759,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 0.144\n- R-factor: 0.0878\n\nFitted parameters:\n- S0\u00b2: -602.75 \u00b1 744.74\n- \u0394E0: -120.38 \u00b1 31.39 eV\n- \u03c3\u00b2: 0.0148 \u00b1 0.0068 \u00c5\u00b2\n- \u0394R: -0.506 \u00b1 0.072 \u00c5\n\nFirst-shell path:\n- Effective path length R: 1.719 \u00c5\n\nNote:\n- Although the residual metrics are moderate, the fitted S0\u00b2 and \u0394E0 are unphysical, so this fit is not reliable as-is. A constrained/refined fit would be recommended next.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

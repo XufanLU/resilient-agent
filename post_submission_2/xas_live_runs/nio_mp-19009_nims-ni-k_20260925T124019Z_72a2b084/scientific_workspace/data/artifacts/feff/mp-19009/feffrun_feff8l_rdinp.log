@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Ni1 O1
+ Reduced formula:  NiO
+ space group: (Fm-3m), space number:  (225)
+ abc:  2.969848   2.969848   2.969848
+ angles: 60.000000  60.000000  60.000000
+ sites: 2

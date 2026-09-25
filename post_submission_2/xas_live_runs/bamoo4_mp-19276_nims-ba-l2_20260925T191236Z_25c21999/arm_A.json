@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 10.099575041793287,
+  "pre_interruption_wall_time_s": 3.7089128331281245,
+  "recovery_wall_time_s": 6.390662208665162,
+  "pre_interruption_token_usage": {
+    "input_tokens": 662,
+    "output_tokens": 96,
+    "total_tokens": 758,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1709,
+    "output_tokens": 305,
+    "total_tokens": 2014,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2371,
+    "output_tokens": 401,
+    "total_tokens": 2772,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nFit summary:\n- k-range: 3.0\u201310.0 \u00c5\u207b\u00b9\n- R-range: 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 132.09\n- R-factor: 0.0859\n\nBest-fit parameters:\n- S0\u00b2: 29.40 \u00b1 10.46\n- \u0394E0: 3.18 \u00b1 2.86 eV\n- \u0394R: -0.0025 \u00b1 0.0364 \u00c5\n- \u03c3\u00b2: 0.0246 \u00b1 0.0065 \u00c5\u00b2\n- Path R: 2.7589 \u00c5\n\nSpectrum reference:\n- Ba-L1_BaMoO4_Si111_100ms_200220\n\nNote:\n- The R-factor is moderate, but the fitted S0\u00b2 is unphysically large, so this first-shell fit likely needs refinement or tighter constraints.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

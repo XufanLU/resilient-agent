@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Ba4 Cr4 O16
+ Reduced formula:  BaCrO4
+ space group: (Pnma), space number:  (62)
+ abc:  5.536548   7.364271   9.153098
+ angles: 90.000000  90.000000  90.000000
+ sites: 24

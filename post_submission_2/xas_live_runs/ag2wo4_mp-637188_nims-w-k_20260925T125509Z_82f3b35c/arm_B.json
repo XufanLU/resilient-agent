@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 8.973467333242297,
+  "pre_interruption_wall_time_s": 3.7650163751095533,
+  "recovery_wall_time_s": 5.208450958132744,
+  "pre_interruption_token_usage": {
+    "input_tokens": 662,
+    "output_tokens": 96,
+    "total_tokens": 758,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1709,
+    "output_tokens": 278,
+    "total_tokens": 1987,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2371,
+    "output_tokens": 374,
+    "total_tokens": 2745,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 2.46\n- R-factor: 0.067\n\nFitted parameters:\n- S0\u00b2 = 1.41 \u00b1 0.43\n- \u0394E0 = 4.15 \u00b1 5.49 eV\n\nFirst-shell path:\n- R = 1.791 \u00c5\n- \u0394R = -0.054 \u00b1 0.019 \u00c5\n- \u03c3\u00b2 = -0.00358 \u00b1 0.00255 \u00c5\u00b2\n\nNote:\n- The fitted \u03c3\u00b2 is negative, which is not physically meaningful and suggests the first-shell-only model or data/windowing may need refinement.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

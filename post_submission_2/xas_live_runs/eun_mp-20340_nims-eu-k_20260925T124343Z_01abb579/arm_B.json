@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 9.945122249890119,
+  "pre_interruption_wall_time_s": 3.9701682911254466,
+  "recovery_wall_time_s": 5.974953958764672,
+  "pre_interruption_token_usage": {
+    "input_tokens": 661,
+    "output_tokens": 95,
+    "total_tokens": 756,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1701,
+    "output_tokens": 300,
+    "total_tokens": 2001,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2362,
+    "output_tokens": 395,
+    "total_tokens": 2757,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0, R = 1.0\u20133.0 \u00c5\n- \u0394E0: 4.51 \u00b1 10.81 eV\n- S0\u00b2: 6.57 \u00b1 7.60\n- First-shell \u0394R: 0.0227 \u00b1 0.1105 \u00c5\n- First-shell R: 2.557 \u00c5\n- \u03c3\u00b2: 0.0147 \u00b1 0.0181 \u00c5\u00b2\n- Reduced \u03c7\u00b2: 307.59\n- R-factor: 0.5756\n\nBrief assessment:\n- The fit converged, but the quality is poor: both reduced \u03c7\u00b2 and R-factor are high, and uncertainties are large.\n- The fitted amplitude S0\u00b2 is also unphysically large, suggesting the current first-shell-only model is not adequately describing the data.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

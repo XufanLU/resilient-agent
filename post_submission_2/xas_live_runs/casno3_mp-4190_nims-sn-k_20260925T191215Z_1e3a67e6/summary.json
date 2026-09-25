@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "experiment_id": "casno3_mp-4190_nims-sn-k_20260925T191215Z_1e3a67e6",
+  "pair": {
+    "id": "casno3_mp-4190_nims-sn-k",
+    "formula": "CaSnO3",
+    "material_id": "mp-4190",
+    "xas_path": "fixtures/Sn-K_CaSnO3_Si311_50ms_170616.txt",
+    "cif_file": "mp-4190.cif",
+    "xas_file": "Sn-K_CaSnO3_Si311_50ms_170616.txt"
+  },
+  "arms": {
+    "A": {
+      "wall_time_s": 10.243498208001256,
+      "pre_interruption_wall_time_s": 3.969084416050464,
+      "recovery_wall_time_s": 6.274413791950792,
+      "pre_interruption_token_usage": {
+        "input_tokens": 661,
+        "output_tokens": 95,
+        "total_tokens": 756,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1702,
+        "output_tokens": 270,
+        "total_tokens": 1972,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2363,
+        "output_tokens": 365,
+        "total_tokens": 2728,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- R-factor: 0.0371\n- Reduced \u03c7\u00b2: 79.38\n\nFitted global parameters:\n- S0\u00b2 = 5.71 \u00b1 1.06\n- \u0394E0 = 6.51 \u00b1 2.32 eV\n\nFirst-shell path:\n- R = 2.050 \u00c5\n- \u0394R = -0.0088 \u00b1 0.0145 \u00c5\n- \u03c3\u00b2 = 0.00128 \u00b1 0.00217 \u00c5\u00b2\n\nOverall, the fit converged with a low R-factor, indicating a reasonable first-shell match.",
+      "data_loads": {
+        "raw_xas_imports": 1,
+        "processed_payload_loads": 1
+      },
+      "behavior": "baseline_restart_from_zero"
+    },
+    "B": {
+      "wall_time_s": 7.989185667131096,
+      "pre_interruption_wall_time_s": 3.591039542108774,
+      "recovery_wall_time_s": 4.398146125022322,
+      "pre_interruption_token_usage": {
+        "input_tokens": 661,
+        "output_tokens": 95,
+        "total_tokens": 756,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1702,
+        "output_tokens": 287,
+        "total_tokens": 1989,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2363,
+        "output_tokens": 382,
+        "total_tokens": 2745,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 79.38\n- R-factor: 0.0371\n\nFitted global parameters:\n- S0\u00b2: 5.71 \u00b1 1.06\n- \u0394E0: 6.51 \u00b1 2.32 eV\n\nFirst-shell path:\n- Effective R: 2.050 \u00c5\n- \u0394R: -0.0088 \u00b1 0.0145 \u00c5\n- \u03c3\u00b2: 0.00128 \u00b1 0.00217 \u00c5\u00b2\n\nThe fit converged, and the low R-factor suggests a reasonable match in the fitted window, though the large S0\u00b2 indicates the model or normalization may need further scrutiny.",
+      "data_loads": {
+        "raw_xas_imports": 0,
+        "processed_payload_loads": 2
+      },
+      "behavior": "checkpoint_resume"
+    }
+  },
+  "configuration": {
+    "protocol": "xas_live_full_usage_v1",
+    "requested_model": "gpt-5.4",
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "python": "3.12.14",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "xraylarch": "2025.2.2.post26+gc21c0a59b",
+      "numpy": "2.5.3",
+      "scipy": "1.16.1",
+      "pydantic": "2.11.7"
+    },
+    "source_sha256": "ec339e98c398ce2bedebe589b430819f7df854d58f21942bca1d4ab470ae169d",
+    "original_test_sha256": "060e94dcc41436dfba18fe5f5cc0e645ae0ab56a30086154da89c03b3c6dbb9a",
+    "xas_sha256": "648811a2c870e044cc603abb304187b1b7b10bcf82817f452d13f6fa0c348ef5",
+    "cache_policy": "fresh scientific workspace per pair; processed/FEFF artifacts shared A then B within pair, as in original comparison",
+    "token_scope": "all recorded model responses before interruption plus recovery; local fitting itself consumes no model tokens",
+    "timing_scope": "both invocations, cache clearing, synchronous usage logging, interrupted checkpoint snapshot; excludes final snapshot",
+    "automatic_request_retries": 0,
+    "tracing_disabled": true
+  },
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/xas_live_runs/casno3_mp-4190_nims-sn-k_20260925T191215Z_1e3a67e6",
+  "result_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/live_ab_token_confirmation_20260925T191128Z.jsonl",
+  "B_minus_A_wall_time_s": -2.25431254087016,
+  "B_minus_A_total_tokens": 17,
+  "B_minus_A_raw_xas_imports": -1
+}

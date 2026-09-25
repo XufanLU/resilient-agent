@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 8.900195375084877,
+  "pre_interruption_wall_time_s": 3.548096999991685,
+  "recovery_wall_time_s": 5.352098375093192,
+  "pre_interruption_token_usage": {
+    "input_tokens": 660,
+    "output_tokens": 94,
+    "total_tokens": 754,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1696,
+    "output_tokens": 291,
+    "total_tokens": 1987,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2356,
+    "output_tokens": 385,
+    "total_tokens": 2741,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Amplitude factor S0\u00b2: 5.155 \u00b1 0.888\n- Energy shift \u0394E0: 4.70 \u00b1 1.45 eV\n- Path distance R: 2.436 \u00c5\n- \u0394R: 0.0001 \u00b1 0.0153 \u00c5\n- Debye-Waller factor \u03c3\u00b2: 0.01464 \u00b1 0.00277 \u00c5\u00b2\n- R-factor: 0.0284\n- Reduced \u03c7\u00b2: 177.87\n\nNote:\n- The fit converged, but the unusually large S0\u00b2 and high reduced \u03c7\u00b2 suggest the model or fitting window may need refinement for a more physically reliable first-shell interpretation.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

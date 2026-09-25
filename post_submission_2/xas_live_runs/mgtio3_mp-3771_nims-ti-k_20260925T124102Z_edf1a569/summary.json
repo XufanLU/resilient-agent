@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "experiment_id": "mgtio3_mp-3771_nims-ti-k_20260925T124102Z_edf1a569",
+  "pair": {
+    "id": "mgtio3_mp-3771_nims-ti-k",
+    "formula": "MgTiO3",
+    "material_id": "mp-3771",
+    "xas_path": "fixtures/Ti-K_MgTiO3_Si111_100ms_191115.txt",
+    "cif_file": "mp-3771.cif",
+    "xas_file": "Ti-K_MgTiO3_Si111_100ms_191115.txt"
+  },
+  "arms": {
+    "A": {
+      "wall_time_s": 11.654693082906306,
+      "pre_interruption_wall_time_s": 4.91723966691643,
+      "recovery_wall_time_s": 6.737453415989876,
+      "pre_interruption_token_usage": {
+        "input_tokens": 661,
+        "output_tokens": 95,
+        "total_tokens": 756,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1701,
+        "output_tokens": 276,
+        "total_tokens": 1977,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2362,
+        "output_tokens": 371,
+        "total_tokens": 2733,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 122.77\n- R-factor: 0.491\n\nBest-fit parameters:\n- S0\u00b2: 3.276 \u00b1 4.442\n- \u0394E0: -15.36 \u00b1 20.81 eV\n\nFirst-shell path:\n- R: 1.824 \u00c5\n- \u0394R: -0.0487 \u00b1 0.1027 \u00c5\n- \u03c3\u00b2: 0.00727 \u00b1 0.01503 \u00c5\u00b2\n\nNote:\n- The fit quality appears fairly weak given the high reduced \u03c7\u00b2 and R-factor, so these parameters should be interpreted cautiously.",
+      "data_loads": {
+        "raw_xas_imports": 1,
+        "processed_payload_loads": 1
+      },
+      "behavior": "baseline_restart_from_zero"
+    },
+    "B": {
+      "wall_time_s": 9.752128625288606,
+      "pre_interruption_wall_time_s": 4.072459124960005,
+      "recovery_wall_time_s": 5.6796695003286,
+      "pre_interruption_token_usage": {
+        "input_tokens": 661,
+        "output_tokens": 95,
+        "total_tokens": 756,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1701,
+        "output_tokens": 288,
+        "total_tokens": 1989,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2362,
+        "output_tokens": 383,
+        "total_tokens": 2745,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for **mp-3771**.\n\nSummary:\n- **k-range:** 3.0\u201310.0 \u00c5\u207b\u00b9\n- **R-range:** 1.0\u20133.0 \u00c5\n- **Reduced \u03c7\u00b2:** 122.77\n- **R-factor:** 0.491\n\nFitted parameters:\n- **S0\u00b2:** 3.276 \u00b1 4.442\n- **\u0394E0:** -15.36 \u00b1 20.81 eV\n- **\u03c3\u00b2:** 0.00727 \u00b1 0.01503 \u00c5\u00b2\n- **\u0394R:** -0.0487 \u00b1 0.1027 \u00c5\n- **Shell distance R:** 1.824 \u00c5\n\nOverall, the fit converged, but the relatively large uncertainties and high reduced \u03c7\u00b2 suggest the first-shell-only model is not especially tight for this dataset.",
+      "data_loads": {
+        "raw_xas_imports": 0,
+        "processed_payload_loads": 2
+      },
+      "behavior": "checkpoint_resume"
+    }
+  },
+  "configuration": {
+    "protocol": "xas_live_full_usage_v1",
+    "requested_model": "gpt-5.4",
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "python": "3.12.14",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "xraylarch": "2025.2.2.post26+gc21c0a59b",
+      "numpy": "2.5.3",
+      "scipy": "1.16.1",
+      "pydantic": "2.11.7"
+    },
+    "source_sha256": "ca6ce009e4de92877be459056d91d4ece3b93f3c619fe7a2855a9fcba720a143",
+    "original_test_sha256": "060e94dcc41436dfba18fe5f5cc0e645ae0ab56a30086154da89c03b3c6dbb9a",
+    "xas_sha256": "31f2b3585f88670b7108509e25a473e1b4832c4c3fe5e56dd37589d2e900a437",
+    "cache_policy": "fresh scientific workspace per pair; processed/FEFF artifacts shared A then B within pair, as in original comparison",
+    "token_scope": "all recorded model responses before interruption plus recovery; local fitting itself consumes no model tokens",
+    "timing_scope": "both invocations, cache clearing, synchronous usage logging, interrupted checkpoint snapshot; excludes final snapshot",
+    "automatic_request_retries": 0,
+    "tracing_disabled": true
+  },
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/xas_live_runs/mgtio3_mp-3771_nims-ti-k_20260925T124102Z_edf1a569",
+  "result_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/live_ab_results.jsonl",
+  "B_minus_A_wall_time_s": -1.9025644576177,
+  "B_minus_A_total_tokens": 12,
+  "B_minus_A_raw_xas_imports": -1
+}

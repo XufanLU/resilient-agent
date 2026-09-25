@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 12.943625582847744,
+  "pre_interruption_wall_time_s": 4.045159999746829,
+  "recovery_wall_time_s": 8.898465583100915,
+  "pre_interruption_token_usage": {
+    "input_tokens": 659,
+    "output_tokens": 93,
+    "total_tokens": 752,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1688,
+    "output_tokens": 288,
+    "total_tokens": 1976,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2347,
+    "output_tokens": 381,
+    "total_tokens": 2728,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 7869.80\n- R-factor: 0.941\n\nFitted parameters:\n- S0\u00b2: 4.243 \u00b1 33.141\n- \u0394E0: -29.259 \u00b1 134.375 eV\n- First-shell \u0394R: -0.131 \u00b1 0.581 \u00c5\n- First-shell R: 1.787 \u00c5\n- \u03c3\u00b2: 0.01286 \u00b1 0.07699 \u00c5\u00b2\n\nConcise assessment:\n- The fit quality is poor: very high reduced \u03c7\u00b2, high R-factor, and very large parameter uncertainties.\n- This first-shell model likely does not adequately describe the data as configured.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "experiment_id": "tb2o3_mp-2457_nims-tb-k_20260925T185438Z_c1fd4d00",
+  "pair": {
+    "id": "tb2o3_mp-2457_nims-tb-k",
+    "formula": "Tb2O3",
+    "material_id": "mp-2457",
+    "xas_path": "fixtures/Tb-K_Tb2O3_Si311_34ms_190521_001.txt",
+    "cif_file": "mp-2457.cif",
+    "xas_file": "Tb-K_Tb2O3_Si311_34ms_190521_001.txt"
+  },
+  "arms": {
+    "A": {
+      "wall_time_s": 12.027921583037823,
+      "pre_interruption_wall_time_s": 4.772305790800601,
+      "recovery_wall_time_s": 7.255615792237222,
+      "pre_interruption_token_usage": {
+        "input_tokens": 663,
+        "output_tokens": 97,
+        "total_tokens": 760,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1711,
+        "output_tokens": 319,
+        "total_tokens": 2030,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2374,
+        "output_tokens": 416,
+        "total_tokens": 2790,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for mp-2457 using the current Tb K-edge spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 79.09\n- R-factor: 0.0582\n\nFitted parameters:\n- S0\u00b2: 9.39 \u00b1 2.36\n- \u0394E0: 7.85 \u00b1 2.75 eV\n- \u0394R: 0.1349 \u00b1 0.0221 \u00c5\n- \u03c3\u00b2: 0.00912 \u00b1 0.00336 \u00c5\u00b2\n- Fitted path distance R: 2.335 \u00b1 0.022 \u00c5\n\nReference used:\n- Tb-K_Tb2O3_Si311_34ms_190521_001\n\nNote: the R-factor is modest, but the very large S0\u00b2 suggests the fit may be physically questionable and may benefit from additional constraints or a refined model.",
+      "data_loads": {
+        "raw_xas_imports": 1,
+        "processed_payload_loads": 1
+      },
+      "behavior": "baseline_restart_from_zero"
+    },
+    "B": {
+      "wall_time_s": 8.967413959093392,
+      "pre_interruption_wall_time_s": 3.6084067919291556,
+      "recovery_wall_time_s": 5.359007167164236,
+      "pre_interruption_token_usage": {
+        "input_tokens": 663,
+        "output_tokens": 97,
+        "total_tokens": 760,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1711,
+        "output_tokens": 295,
+        "total_tokens": 2006,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2374,
+        "output_tokens": 392,
+        "total_tokens": 2766,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 79.09\n- R-factor: 0.0582\n\nFitted global parameters:\n- S0\u00b2 = 9.39 \u00b1 2.36\n- \u0394E0 = 7.85 \u00b1 2.75 eV\n\nFirst-shell path:\n- R = 2.335 \u00b1 0.022 \u00c5\n- \u0394R = 0.135 \u00b1 0.022 \u00c5\n- \u03c3\u00b2 = 0.00912 \u00b1 0.00336 \u00c5\u00b2\n\nSpectrum reference:\n- Tb-K_Tb2O3_Si311_34ms_190521_001\n\nIf you want, I can also help interpret whether these values look physically reasonable.",
+      "data_loads": {
+        "raw_xas_imports": 0,
+        "processed_payload_loads": 2
+      },
+      "behavior": "checkpoint_resume"
+    }
+  },
+  "configuration": {
+    "protocol": "xas_live_full_usage_v1",
+    "requested_model": "gpt-5.4",
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "python": "3.12.14",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "xraylarch": "2025.2.2.post26+gc21c0a59b",
+      "numpy": "2.5.3",
+      "scipy": "1.16.1",
+      "pydantic": "2.11.7"
+    },
+    "source_sha256": "ec339e98c398ce2bedebe589b430819f7df854d58f21942bca1d4ab470ae169d",
+    "original_test_sha256": "060e94dcc41436dfba18fe5f5cc0e645ae0ab56a30086154da89c03b3c6dbb9a",
+    "xas_sha256": "350f8fb83ae3379a3e93d67e5e6bc037c6ac66c88444fc358c5dee25c6c06b8d",
+    "cache_policy": "fresh scientific workspace per pair; processed/FEFF artifacts shared A then B within pair, as in original comparison",
+    "token_scope": "all recorded model responses before interruption plus recovery; local fitting itself consumes no model tokens",
+    "timing_scope": "both invocations, cache clearing, synchronous usage logging, interrupted checkpoint snapshot; excludes final snapshot",
+    "automatic_request_retries": 0,
+    "tracing_disabled": true
+  },
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/xas_live_runs/tb2o3_mp-2457_nims-tb-k_20260925T185438Z_c1fd4d00",
+  "result_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/live_ab_host_sleep_rerun_20260925T185408Z.jsonl",
+  "B_minus_A_wall_time_s": -3.0605076239444315,
+  "B_minus_A_total_tokens": -24,
+  "B_minus_A_raw_xas_imports": -1
+}

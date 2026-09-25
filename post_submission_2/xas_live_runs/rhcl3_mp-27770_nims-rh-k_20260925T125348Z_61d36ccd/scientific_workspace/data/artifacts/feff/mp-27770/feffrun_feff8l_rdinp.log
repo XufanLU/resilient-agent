@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Rh2 Cl6
+ Reduced formula:  RhCl3
+ space group: (C2/m), space number:  (12)
+ abc:  6.000480   6.000481   6.200986
+ angles: 99.092606  99.092636 119.999223
+ sites: 8

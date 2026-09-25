@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Zr2 Si4
+ Reduced formula:  ZrSi2
+ space group: (Cmcm), space number:  (63)
+ abc:  3.673251   3.683484   7.660267
+ angles:103.911802  90.000000  90.000000
+ sites: 6

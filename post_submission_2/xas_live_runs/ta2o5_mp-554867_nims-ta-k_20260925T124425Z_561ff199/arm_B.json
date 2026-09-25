@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 9.748172707855701,
+  "pre_interruption_wall_time_s": 3.735563541762531,
+  "recovery_wall_time_s": 6.012609166093171,
+  "pre_interruption_token_usage": {
+    "input_tokens": 663,
+    "output_tokens": 97,
+    "total_tokens": 760,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1713,
+    "output_tokens": 283,
+    "total_tokens": 1996,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2376,
+    "output_tokens": 380,
+    "total_tokens": 2756,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current Ta2O5 spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 11.06\n- R-factor: 0.058\n\nBest-fit parameters:\n- S0\u00b2 = 5.115 \u00b1 1.458\n- \u0394E0 = -1.763 \u00b1 4.429 eV\n\nFirst-shell path:\n- R = 1.961 \u00c5\n- \u0394R = 0.015 \u00b1 0.022 \u00c5\n- \u03c3\u00b2 = 0.00655 \u00b1 0.00308 \u00c5\u00b2\n\nOverall: the fit converged, with a reasonable R-factor, though the amplitude term S0\u00b2 is unusually high and may indicate model/normalization limitations.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

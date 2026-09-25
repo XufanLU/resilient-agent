@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 10.243498208001256,
+  "pre_interruption_wall_time_s": 3.969084416050464,
+  "recovery_wall_time_s": 6.274413791950792,
+  "pre_interruption_token_usage": {
+    "input_tokens": 661,
+    "output_tokens": 95,
+    "total_tokens": 756,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1702,
+    "output_tokens": 270,
+    "total_tokens": 1972,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2363,
+    "output_tokens": 365,
+    "total_tokens": 2728,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- R-factor: 0.0371\n- Reduced \u03c7\u00b2: 79.38\n\nFitted global parameters:\n- S0\u00b2 = 5.71 \u00b1 1.06\n- \u0394E0 = 6.51 \u00b1 2.32 eV\n\nFirst-shell path:\n- R = 2.050 \u00c5\n- \u0394R = -0.0088 \u00b1 0.0145 \u00c5\n- \u03c3\u00b2 = 0.00128 \u00b1 0.00217 \u00c5\u00b2\n\nOverall, the fit converged with a low R-factor, indicating a reasonable first-shell match.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

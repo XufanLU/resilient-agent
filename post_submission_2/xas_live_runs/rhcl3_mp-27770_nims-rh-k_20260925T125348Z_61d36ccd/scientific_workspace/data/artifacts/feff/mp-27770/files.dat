@@ -1,0 +1,29 @@
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Rh2 Cl6
+ Reduced formula:  RhCl3
+ space group: (C2/m), space number:  (12)
+ abc:  6.000480   6.000481   6.200986
+ angles: 99.092606  99.092636 119.999223
+ sites: 8
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=45 Rmt= 1.327 Rnm= 1.441 K  shell
+ Pot 1 Z=17 Rmt= 1.353 Rnm= 1.495
+ Pot 2 Z=45 Rmt= 1.366 Rnm= 1.528
+ Gam_ch=7.099E+00 H-L exch
+ Mu= 1.299E+00 kf=1.825E+00 Vint=-1.139E+01 Rs_int= 1.987
+ PATH  Rmax= 4.617,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+ -----------------------------------------------------------------------
+    file        sig2   amp ratio    deg    nlegs  r effective
+ feff0001.dat 0.00000   100.000     2.000     2   2.3492
+ feff0002.dat 0.00000    99.930     2.000     2   2.3498
+ feff0003.dat 0.00000    99.740     2.000     2   2.3513
+ feff0004.dat 0.00000    21.560     1.000     2   3.4639
+ feff0005.dat 0.00000    43.100     2.000     2   3.4646
+ feff0006.dat 0.00000     7.046     4.000     3   4.0818
+ feff0007.dat 0.00000     7.047     4.000     3   4.0818
+ feff0008.dat 0.00000     6.992     4.000     3   4.0832
+ feff0009.dat 0.00000    15.420     2.000     2   4.2624
+ feff0010.dat 0.00000    15.420     2.000     2   4.2630
+ feff0011.dat 0.00000    15.400     2.000     2   4.2642
+ feff0012.dat 0.00000    12.000     2.000     2   4.5712

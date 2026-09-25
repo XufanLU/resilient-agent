@@ -1,0 +1,30 @@
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Ba2 Mo2 O8
+ Reduced formula:  BaMoO4
+ space group: (I4_1/a), space number:  (88)
+ abc:  5.622330   5.622329   7.547623
+ angles:111.867211 111.867224  90.000003
+ sites: 12
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=56 Rmt= 1.972 Rnm= 2.038 K  shell
+ Pot 1 Z=56 Rmt= 2.091 Rnm= 2.189
+ Pot 2 Z=42 Rmt= 1.143 Rnm= 1.382
+ Pot 3 Z= 8 Rmt= 0.979 Rnm= 1.079
+ Gam_ch=1.592E+01 H-L exch
+ Mu= 1.458E+00 kf=2.204E+00 Vint=-1.704E+01 Rs_int= 1.646
+ PATH  Rmax= 4.941,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+ -----------------------------------------------------------------------
+    file        sig2   amp ratio    deg    nlegs  r effective
+ feff0001.dat 0.00000   100.000     4.000     2   2.7614
+ feff0002.dat 0.00000    94.830     4.000     2   2.7996
+ feff0003.dat 0.00000    24.050     4.000     2   3.9164
+ feff0004.dat 0.00000    57.910     4.000     2   3.9756
+ feff0005.dat 0.00000    59.160     4.000     2   4.2653
+ feff0006.dat 0.00000    44.910     4.000     2   4.2653
+ feff0007.dat 0.00000    10.430     8.000     3   4.2728
+ feff0008.dat 0.00000    14.510     8.000     3   4.3986
+ feff0009.dat 0.00000     4.940     4.000     4   4.5319
+ feff0010.dat 0.00000    10.360     4.000     2   4.7253
+ feff0011.dat 0.00000    10.130     4.000     2   4.7478
+ feff0013.dat 0.00000     8.817     4.000     2   4.8916

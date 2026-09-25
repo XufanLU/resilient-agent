@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 12.027921583037823,
+  "pre_interruption_wall_time_s": 4.772305790800601,
+  "recovery_wall_time_s": 7.255615792237222,
+  "pre_interruption_token_usage": {
+    "input_tokens": 663,
+    "output_tokens": 97,
+    "total_tokens": 760,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1711,
+    "output_tokens": 319,
+    "total_tokens": 2030,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2374,
+    "output_tokens": 416,
+    "total_tokens": 2790,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for mp-2457 using the current Tb K-edge spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 79.09\n- R-factor: 0.0582\n\nFitted parameters:\n- S0\u00b2: 9.39 \u00b1 2.36\n- \u0394E0: 7.85 \u00b1 2.75 eV\n- \u0394R: 0.1349 \u00b1 0.0221 \u00c5\n- \u03c3\u00b2: 0.00912 \u00b1 0.00336 \u00c5\u00b2\n- Fitted path distance R: 2.335 \u00b1 0.022 \u00c5\n\nReference used:\n- Tb-K_Tb2O3_Si311_34ms_190521_001\n\nNote: the R-factor is modest, but the very large S0\u00b2 suggests the fit may be physically questionable and may benefit from additional constraints or a refined model.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

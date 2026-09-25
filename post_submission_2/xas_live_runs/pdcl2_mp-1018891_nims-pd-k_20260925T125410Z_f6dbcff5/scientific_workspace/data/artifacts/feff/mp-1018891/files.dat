@@ -1,0 +1,24 @@
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Pd2 Cl4
+ Reduced formula:  PdCl2
+ space group: (P2_1/c), space number:  (14)
+ abc:  3.974617   5.642499   6.450360
+ angles:107.627973  90.000000  90.000000
+ sites: 6
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=46 Rmt= 1.325 Rnm= 1.478 K  shell
+ Pot 1 Z=17 Rmt= 1.327 Rnm= 1.495
+ Pot 2 Z=46 Rmt= 1.348 Rnm= 1.530
+ Gam_ch=7.677E+00 H-L exch
+ Mu= 1.331E+00 kf=1.759E+00 Vint=-1.045E+01 Rs_int= 2.062
+ PATH  Rmax= 4.198,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+ -----------------------------------------------------------------------
+    file        sig2   amp ratio    deg    nlegs  r effective
+ feff0001.dat 0.00000   100.000     2.000     2   2.3169
+ feff0002.dat 0.00000    99.910     2.000     2   2.3176
+ feff0003.dat 0.00000    25.610     2.000     2   3.6041
+ feff0004.dat 0.00000    23.860     2.000     2   3.6806
+ feff0005.dat 0.00000    62.730     4.000     2   3.7883
+ feff0006.dat 0.00000    27.060     2.000     2   3.9746
+ feff0007.dat 0.00000    15.630     2.000     2   4.1560

@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 11.808493125252426,
+  "pre_interruption_wall_time_s": 3.8713723751716316,
+  "recovery_wall_time_s": 7.937120750080794,
+  "pre_interruption_token_usage": {
+    "input_tokens": 660,
+    "output_tokens": 94,
+    "total_tokens": 754,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1693,
+    "output_tokens": 300,
+    "total_tokens": 1993,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2353,
+    "output_tokens": 394,
+    "total_tokens": 2747,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 14.06\n- R-factor: 0.0573\n\nBest-fit parameters:\n- S0\u00b2: -5488.16 \u00b1 7555.15\n- \u0394E0: -164.08 \u00b1 34.16 eV\n- \u03c3\u00b2: 0.02287 \u00b1 0.00664 \u00c5\u00b2\n- \u0394R: -0.07598 \u00b1 0.07252 \u00c5\n- Path distance R: 1.7478 \u00c5\n\nNote:\n- The R-factor is moderate, but the fitted S0\u00b2 and \u0394E0 are highly unphysical, so this first-shell fit is not reliable as-is.\n- Likely next step: constrain parameters or refine the fitting range/model.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

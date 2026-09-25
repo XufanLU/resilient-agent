@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "experiment_id": "ta2o5_mp-554867_nims-ta-k_20260925T124425Z_561ff199",
+  "pair": {
+    "id": "ta2o5_mp-554867_nims-ta-k",
+    "formula": "Ta2O5",
+    "material_id": "mp-554867",
+    "xas_path": "fixtures/Ta-K_Ta2O5_Si311_20ms_200619_001.txt",
+    "cif_file": "mp-554867.cif",
+    "xas_file": "Ta-K_Ta2O5_Si311_20ms_200619_001.txt"
+  },
+  "arms": {
+    "A": {
+      "wall_time_s": 10.881737374700606,
+      "pre_interruption_wall_time_s": 3.7836131658405066,
+      "recovery_wall_time_s": 7.098124208860099,
+      "pre_interruption_token_usage": {
+        "input_tokens": 663,
+        "output_tokens": 97,
+        "total_tokens": 760,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1713,
+        "output_tokens": 290,
+        "total_tokens": 2003,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2376,
+        "output_tokens": 387,
+        "total_tokens": 2763,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current Ta2O5 spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 11.06\n- R-factor: 0.058\n\nBest-fit parameters:\n- S0\u00b2 = 5.115 \u00b1 1.458\n- \u0394E0 = -1.763 \u00b1 4.429 eV\n- First-shell \u0394R = 0.015 \u00b1 0.022 \u00c5\n- First-shell R = 1.961 \u00c5\n- \u03c3\u00b2 = 0.00655 \u00b1 0.00308 \u00c5\u00b2\n\nNotes:\n- The fit converged, but the amplitude term S0\u00b2 is unusually high, so this result should be treated cautiously.\n- Overall fit quality is moderate based on the R-factor.",
+      "data_loads": {
+        "raw_xas_imports": 1,
+        "processed_payload_loads": 1
+      },
+      "behavior": "baseline_restart_from_zero"
+    },
+    "B": {
+      "wall_time_s": 9.748172707855701,
+      "pre_interruption_wall_time_s": 3.735563541762531,
+      "recovery_wall_time_s": 6.012609166093171,
+      "pre_interruption_token_usage": {
+        "input_tokens": 663,
+        "output_tokens": 97,
+        "total_tokens": 760,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1713,
+        "output_tokens": 283,
+        "total_tokens": 1996,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2376,
+        "output_tokens": 380,
+        "total_tokens": 2756,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current Ta2O5 spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 11.06\n- R-factor: 0.058\n\nBest-fit parameters:\n- S0\u00b2 = 5.115 \u00b1 1.458\n- \u0394E0 = -1.763 \u00b1 4.429 eV\n\nFirst-shell path:\n- R = 1.961 \u00c5\n- \u0394R = 0.015 \u00b1 0.022 \u00c5\n- \u03c3\u00b2 = 0.00655 \u00b1 0.00308 \u00c5\u00b2\n\nOverall: the fit converged, with a reasonable R-factor, though the amplitude term S0\u00b2 is unusually high and may indicate model/normalization limitations.",
+      "data_loads": {
+        "raw_xas_imports": 0,
+        "processed_payload_loads": 2
+      },
+      "behavior": "checkpoint_resume"
+    }
+  },
+  "configuration": {
+    "protocol": "xas_live_full_usage_v1",
+    "requested_model": "gpt-5.4",
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "python": "3.12.14",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "xraylarch": "2025.2.2.post26+gc21c0a59b",
+      "numpy": "2.5.3",
+      "scipy": "1.16.1",
+      "pydantic": "2.11.7"
+    },
+    "source_sha256": "ca6ce009e4de92877be459056d91d4ece3b93f3c619fe7a2855a9fcba720a143",
+    "original_test_sha256": "060e94dcc41436dfba18fe5f5cc0e645ae0ab56a30086154da89c03b3c6dbb9a",
+    "xas_sha256": "eff3b18321de23102b2806c1b95cfd0b1b4ddd0bb3faaa614e5b4b2d8bed879c",
+    "cache_policy": "fresh scientific workspace per pair; processed/FEFF artifacts shared A then B within pair, as in original comparison",
+    "token_scope": "all recorded model responses before interruption plus recovery; local fitting itself consumes no model tokens",
+    "timing_scope": "both invocations, cache clearing, synchronous usage logging, interrupted checkpoint snapshot; excludes final snapshot",
+    "automatic_request_retries": 0,
+    "tracing_disabled": true
+  },
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/xas_live_runs/ta2o5_mp-554867_nims-ta-k_20260925T124425Z_561ff199",
+  "result_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/live_ab_results.jsonl",
+  "B_minus_A_wall_time_s": -1.1335646668449044,
+  "B_minus_A_total_tokens": -7,
+  "B_minus_A_raw_xas_imports": -1
+}

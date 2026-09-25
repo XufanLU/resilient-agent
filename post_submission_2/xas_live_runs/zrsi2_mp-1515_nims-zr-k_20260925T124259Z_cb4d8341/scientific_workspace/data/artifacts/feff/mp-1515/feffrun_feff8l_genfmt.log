@@ -1,0 +1,25 @@
+
+======== running Feff module feff8l_genfmt ========
+ Calculating EXAFS parameters...
+    Curved wave chi amplitude ratio   4.00%
+    Discard feff.dat for paths with cw ratio <   2.67%
+    path  cw ratio     deg    nleg  reff
+      1   100.000     4.000     2   2.7241
+      2    44.787     2.000     2   2.8227
+      3    44.674     2.000     2   2.8250
+      4    37.843     2.000     2   2.9781
+      5    28.760     2.000     2   3.6464
+      6    28.205     2.000     2   3.6732
+      7    27.996     2.000     2   3.6835
+      8     8.617     8.000     3   4.0465
+      9     7.514     8.000     3   4.1243
+     10     4.882     8.000     3   4.5608
+     11     4.917     8.000     3   4.5659
+     12    17.562     4.000     2   4.6325
+     13    17.439     4.000     2   4.6420
+     14     3.518     8.000     3   4.6743
+     15     3.693     8.000     3   4.6743
+     16    16.368     4.000     2   4.7288
+   16 paths kept,   16 examined.
+ Done with module 5: F_eff.
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL

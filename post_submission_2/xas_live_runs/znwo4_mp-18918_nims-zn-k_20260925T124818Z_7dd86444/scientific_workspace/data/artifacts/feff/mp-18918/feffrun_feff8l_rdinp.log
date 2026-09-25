@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Zn2 W2 O8
+ Reduced formula:  ZnWO4
+ space group: (P2/c), space number:  (13)
+ abc:  4.676719   4.936454   5.729711
+ angles: 90.000000  90.000000  90.586112
+ sites: 12

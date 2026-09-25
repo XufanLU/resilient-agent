@@ -1,0 +1,33 @@
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Zr2 Si4
+ Reduced formula:  ZrSi2
+ space group: (Cmcm), space number:  (63)
+ abc:  3.673251   3.683484   7.660267
+ angles:103.911802  90.000000  90.000000
+ sites: 6
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=40 Rmt= 1.597 Rnm= 1.660 K  shell
+ Pot 1 Z=14 Rmt= 1.425 Rnm= 1.522
+ Pot 2 Z=40 Rmt= 1.710 Rnm= 1.802
+ Gam_ch=4.800E+00 H-L exch
+ Mu=-2.778E+00 kf=1.853E+00 Vint=-1.586E+01 Rs_int= 1.957
+ PATH  Rmax= 4.776,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+ -----------------------------------------------------------------------
+    file        sig2   amp ratio    deg    nlegs  r effective
+ feff0001.dat 0.00000   100.000     4.000     2   2.7241
+ feff0002.dat 0.00000    44.790     2.000     2   2.8227
+ feff0003.dat 0.00000    44.670     2.000     2   2.8250
+ feff0004.dat 0.00000    37.840     2.000     2   2.9781
+ feff0005.dat 0.00000    28.760     2.000     2   3.6464
+ feff0006.dat 0.00000    28.200     2.000     2   3.6732
+ feff0007.dat 0.00000    28.000     2.000     2   3.6835
+ feff0008.dat 0.00000     8.617     8.000     3   4.0465
+ feff0009.dat 0.00000     7.514     8.000     3   4.1243
+ feff0010.dat 0.00000     4.882     8.000     3   4.5608
+ feff0011.dat 0.00000     4.917     8.000     3   4.5659
+ feff0012.dat 0.00000    17.560     4.000     2   4.6325
+ feff0013.dat 0.00000    17.440     4.000     2   4.6420
+ feff0014.dat 0.00000     3.518     8.000     3   4.6743
+ feff0015.dat 0.00000     3.693     8.000     3   4.6743
+ feff0016.dat 0.00000    16.370     4.000     2   4.7288

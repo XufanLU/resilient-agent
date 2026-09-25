@@ -1,0 +1,37 @@
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Ag16 W8 O32
+ Reduced formula:  Ag2WO4
+ space group: (Pnn2), space number:  (34)
+ abc:  5.950454  11.164053  12.304505
+ angles: 90.000000  90.000000  90.000000
+ sites: 56
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=74 Rmt= 1.248 Rnm= 1.419 K  shell
+ Pot 1 Z=47 Rmt= 1.654 Rnm= 1.737
+ Pot 2 Z= 8 Rmt= 0.990 Rnm= 1.090
+ Pot 3 Z=74 Rmt= 1.246 Rnm= 1.428
+ Gam_ch=4.379E+01 H-L exch
+ Mu= 2.049E+00 kf=2.027E+00 Vint=-1.360E+01 Rs_int= 1.790
+ PATH  Rmax= 4.058,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+ -----------------------------------------------------------------------
+    file        sig2   amp ratio    deg    nlegs  r effective
+ feff0001.dat 0.00000   100.000     2.000     2   1.8449
+ feff0002.dat 0.00000    49.100     1.000     2   1.8525
+ feff0003.dat 0.00000    26.570     1.000     2   2.1184
+ feff0004.dat 0.00000    25.750     1.000     2   2.1324
+ feff0005.dat 0.00000    25.510     1.000     2   2.1367
+ feff0006.dat 0.00000    14.870     1.000     2   3.3080
+ feff0007.dat 0.00000    14.340     1.000     2   3.3370
+ feff0008.dat 0.00000    12.830     1.000     2   3.4128
+ feff0009.dat 0.00000    10.840     1.000     2   3.5519
+ feff0010.dat 0.00000    10.370     1.000     2   3.5893
+ feff0011.dat 0.00000    10.090     1.000     2   3.6121
+ feff0012.dat 0.00000     8.499     1.000     2   3.7608
+ feff0013.dat 0.00000     8.070     1.000     2   3.8067
+ feff0014.dat 0.00000     7.090     1.000     2   3.9234
+ feff0015.dat 0.00000     7.027     1.000     2   3.9316
+ feff0016.dat 0.00000    13.170     2.000     3   3.9493
+ feff0017.dat 0.00000     6.808     1.000     2   3.9608
+ feff0018.dat 0.00000     6.131     1.000     4   3.9751
+ feff0019.dat 0.00000     6.638     1.000     2   3.9842

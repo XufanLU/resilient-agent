@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "experiment_id": "cocl2_mp-23240_nims-co-k_20260925T124735Z_81475003",
+  "pair": {
+    "id": "cocl2_mp-23240_nims-co-k",
+    "formula": "CoCl2",
+    "material_id": "mp-23240",
+    "xas_path": "fixtures/Co-K_CoCl2_Si111_50ms_140616.txt",
+    "cif_file": "mp-23240.cif",
+    "xas_file": "Co-K_CoCl2_Si111_50ms_140616.txt"
+  },
+  "arms": {
+    "A": {
+      "wall_time_s": 10.086687000002712,
+      "pre_interruption_wall_time_s": 3.235452957917005,
+      "recovery_wall_time_s": 6.851234042085707,
+      "pre_interruption_token_usage": {
+        "input_tokens": 660,
+        "output_tokens": 94,
+        "total_tokens": 754,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1696,
+        "output_tokens": 284,
+        "total_tokens": 1980,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2356,
+        "output_tokens": 378,
+        "total_tokens": 2734,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- R-factor: 0.0284\n- Reduced \u03c7\u00b2: 177.87\n\nFitted parameters:\n- S0\u00b2 = 5.155 \u00b1 0.888\n- \u0394E0 = 4.703 \u00b1 1.454 eV\n- \u0394R = 0.00010 \u00b1 0.01529 \u00c5\n- \u03c3\u00b2 = 0.01464 \u00b1 0.00277 \u00c5\u00b2\n- Path distance R = 2.4359 \u00c5\n\nNote:\n- The fit converged, but the amplitude term S0\u00b2 is unusually high, so the result may indicate model/data mismatch or scaling issues despite the low R-factor.",
+      "data_loads": {
+        "raw_xas_imports": 1,
+        "processed_payload_loads": 1
+      },
+      "behavior": "baseline_restart_from_zero"
+    },
+    "B": {
+      "wall_time_s": 8.900195375084877,
+      "pre_interruption_wall_time_s": 3.548096999991685,
+      "recovery_wall_time_s": 5.352098375093192,
+      "pre_interruption_token_usage": {
+        "input_tokens": 660,
+        "output_tokens": 94,
+        "total_tokens": 754,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1696,
+        "output_tokens": 291,
+        "total_tokens": 1987,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2356,
+        "output_tokens": 385,
+        "total_tokens": 2741,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Amplitude factor S0\u00b2: 5.155 \u00b1 0.888\n- Energy shift \u0394E0: 4.70 \u00b1 1.45 eV\n- Path distance R: 2.436 \u00c5\n- \u0394R: 0.0001 \u00b1 0.0153 \u00c5\n- Debye-Waller factor \u03c3\u00b2: 0.01464 \u00b1 0.00277 \u00c5\u00b2\n- R-factor: 0.0284\n- Reduced \u03c7\u00b2: 177.87\n\nNote:\n- The fit converged, but the unusually large S0\u00b2 and high reduced \u03c7\u00b2 suggest the model or fitting window may need refinement for a more physically reliable first-shell interpretation.",
+      "data_loads": {
+        "raw_xas_imports": 0,
+        "processed_payload_loads": 2
+      },
+      "behavior": "checkpoint_resume"
+    }
+  },
+  "configuration": {
+    "protocol": "xas_live_full_usage_v1",
+    "requested_model": "gpt-5.4",
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "python": "3.12.14",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "xraylarch": "2025.2.2.post26+gc21c0a59b",
+      "numpy": "2.5.3",
+      "scipy": "1.16.1",
+      "pydantic": "2.11.7"
+    },
+    "source_sha256": "ca6ce009e4de92877be459056d91d4ece3b93f3c619fe7a2855a9fcba720a143",
+    "original_test_sha256": "060e94dcc41436dfba18fe5f5cc0e645ae0ab56a30086154da89c03b3c6dbb9a",
+    "xas_sha256": "df1ab992b125dcfc1936829291912c7bf64663105a103ec1e8101716b937cfeb",
+    "cache_policy": "fresh scientific workspace per pair; processed/FEFF artifacts shared A then B within pair, as in original comparison",
+    "token_scope": "all recorded model responses before interruption plus recovery; local fitting itself consumes no model tokens",
+    "timing_scope": "both invocations, cache clearing, synchronous usage logging, interrupted checkpoint snapshot; excludes final snapshot",
+    "automatic_request_retries": 0,
+    "tracing_disabled": true
+  },
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/xas_live_runs/cocl2_mp-23240_nims-co-k_20260925T124735Z_81475003",
+  "result_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/live_ab_results.jsonl",
+  "B_minus_A_wall_time_s": -1.186491624917835,
+  "B_minus_A_total_tokens": 7,
+  "B_minus_A_raw_xas_imports": -1
+}

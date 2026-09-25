@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 11.417029167059809,
+  "pre_interruption_wall_time_s": 3.7497675828635693,
+  "recovery_wall_time_s": 7.66726158419624,
+  "pre_interruption_token_usage": {
+    "input_tokens": 659,
+    "output_tokens": 93,
+    "total_tokens": 752,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1686,
+    "output_tokens": 297,
+    "total_tokens": 1983,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2345,
+    "output_tokens": 390,
+    "total_tokens": 2735,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- \u0394E0: -5.18 \u00b1 27.83 eV\n- S0\u00b2: 4.60 \u00b1 10.33\n- Reduced \u03c7\u00b2: 16109.06\n- R-factor: 0.827\n\nFirst-shell path:\n- R: 2.040 \u00c5\n- \u0394R: -0.060 \u00b1 0.176 \u00c5\n- \u03c3\u00b2: 0.00363 \u00b1 0.02649 \u00c5\u00b2\n\nConcise assessment:\n- The fit ran successfully, but the fit quality is poor based on the very large reduced \u03c7\u00b2, high R-factor, and large parameter uncertainties.\n- The first-shell distance is near 2.04 \u00c5, but the result should be treated cautiously.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

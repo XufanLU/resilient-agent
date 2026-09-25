@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 10.763992250431329,
+  "pre_interruption_wall_time_s": 3.2254301253706217,
+  "recovery_wall_time_s": 7.538562125060707,
+  "pre_interruption_token_usage": {
+    "input_tokens": 662,
+    "output_tokens": 96,
+    "total_tokens": 758,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1707,
+    "output_tokens": 310,
+    "total_tokens": 2017,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2369,
+    "output_tokens": 406,
+    "total_tokens": 2775,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 0.144\n- R-factor: 0.0878\n\nBest-fit parameters:\n- S0\u00b2: -602.75 \u00b1 744.74\n- \u0394E0: -120.38 \u00b1 31.39 eV\n- First-shell \u0394R: -0.506 \u00b1 0.072 \u00c5\n- First-shell R: 1.719 \u00c5\n- \u03c3\u00b2: 0.0148 \u00b1 0.0068 \u00c5\u00b2\n\nConcise assessment:\n- The numerical fit converged, but the amplitude factor S0\u00b2 is unphysical and very poorly determined.\n- \u0394E0 is also unusually large in magnitude.\n- So while the residual metrics are modest, this fit is not physically reliable without tighter constraints or a revised fitting model.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

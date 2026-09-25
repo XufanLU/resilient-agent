@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 15.905184916686267,
+  "pre_interruption_wall_time_s": 6.960529332980514,
+  "recovery_wall_time_s": 8.944655583705753,
+  "pre_interruption_token_usage": {
+    "input_tokens": 660,
+    "output_tokens": 94,
+    "total_tokens": 754,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1691,
+    "output_tokens": 320,
+    "total_tokens": 2011,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2351,
+    "output_tokens": 414,
+    "total_tokens": 2765,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nConcise summary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 4.44\n- R-factor: 1.0000\n\nFitted parameters:\n- S0\u00b2: -5.20\n- \u0394E0: -174.20 eV\n- \u0394R: 0.706 \u00c5\n- \u03c3\u00b2: 0.0765 \u00c5\u00b2\n- Fitted path distance R: 2.547 \u00c5\n\nAssessment:\n- The fit converged, but the parameter values are not physically reasonable:\n  - negative S0\u00b2\n  - very large negative \u0394E0\n  - unusually large \u03c3\u00b2\n  - extremely large parameter uncertainties\n- This suggests the first-shell model/path setup is not adequately describing the data in the chosen fit range.\n\nIf you want, I can next help check the preprocessing/plot or prepare FEFF paths to diagnose the poor fit.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

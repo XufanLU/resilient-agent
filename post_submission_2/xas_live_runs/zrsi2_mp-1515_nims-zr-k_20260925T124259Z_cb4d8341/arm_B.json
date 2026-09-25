@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 10.613286000210792,
+  "pre_interruption_wall_time_s": 4.759259125217795,
+  "recovery_wall_time_s": 5.8540268749929965,
+  "pre_interruption_token_usage": {
+    "input_tokens": 660,
+    "output_tokens": 94,
+    "total_tokens": 754,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1696,
+    "output_tokens": 273,
+    "total_tokens": 1969,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2356,
+    "output_tokens": 367,
+    "total_tokens": 2723,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material/XAS spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Amplitude factor S0\u00b2: 6.203 \u00b1 0.847\n- Energy shift \u0394E0: 5.627 \u00b1 1.229 eV\n- Reduced \u03c7\u00b2: 48.360\n- R-factor: 0.01854\n\nFirst-shell path:\n- Bond distance R: 2.7633 \u00c5\n- \u0394R: 0.0392 \u00b1 0.0116 \u00c5\n- \u03c3\u00b2: 0.00782 \u00b1 0.00179 \u00c5\u00b2\n\nThe fit converged with a low R-factor, though the reduced \u03c7\u00b2 is relatively high.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

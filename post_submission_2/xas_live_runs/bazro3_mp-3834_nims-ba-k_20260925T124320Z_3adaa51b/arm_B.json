@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 9.686276082880795,
+  "pre_interruption_wall_time_s": 3.744584749918431,
+  "recovery_wall_time_s": 5.941691332962364,
+  "pre_interruption_token_usage": {
+    "input_tokens": 662,
+    "output_tokens": 98,
+    "total_tokens": 760,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1708,
+    "output_tokens": 299,
+    "total_tokens": 2007,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2370,
+    "output_tokens": 397,
+    "total_tokens": 2767,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- \u0394E0: 6.95 \u00b1 2.75 eV\n- S0\u00b2: 11.27 \u00b1 3.99\n- Reduced \u03c7\u00b2: 189.16\n- R-factor: 0.114\n\nFirst-shell path:\n- Nominal R: 2.959 \u00c5\n- \u0394R: -0.020 \u00b1 0.033 \u00c5\n- \u03c3\u00b2: 0.0121 \u00b1 0.0054 \u00c5\u00b2\n\nInterpretation:\n- The first-shell distance shift is small and close to zero within error.\n- The disorder term \u03c3\u00b2 is moderately large.\n- The fitted amplitude S0\u00b2 is unphysically high, suggesting the fit is not well constrained and may need refinement.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

@@ -1,0 +1,29 @@
+ Calculating chi...
+ feffdt, feff.pad to feff.dat conversion: Feff8L (EXAFS)      release  0.1
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Co1 Cl2
+ Reduced formula:  CoCl2
+ space group: (R-3m), space number:  (166)
+ abc:  3.547905   3.547905   6.269180
+ angles: 73.562822  73.562822  60.000017
+ sites: 3
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=27 Rmt= 1.401 Rnm= 1.515 K  shell
+ Pot 1 Z=17 Rmt= 1.370 Rnm= 1.514
+ Pot 2 Z=27 Rmt= 1.442 Rnm= 1.608
+ Gam_ch=1.436E+00 H-L exch
+ Mu=-1.079E+00 kf=1.711E+00 Vint=-1.223E+01 Rs_int= 2.120
+ PATH  Rmax= 4.653,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+       7 paths to process
+    path     filename
+       1     feff0001.dat
+       2     feff0002.dat
+       3     feff0003.dat
+       4     feff0004.dat
+       5     feff0005.dat
+       6     feff0006.dat
+       7     feff0007.dat
+    Use all paths with cw amplitude ratio   4.00%
+    S02  1.000  Global sig2  0.00000
+ Done with module 6: DW + final sum over paths.

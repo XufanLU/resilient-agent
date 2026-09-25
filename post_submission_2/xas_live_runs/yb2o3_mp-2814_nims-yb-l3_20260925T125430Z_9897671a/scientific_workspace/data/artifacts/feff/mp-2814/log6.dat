@@ -1,0 +1,30 @@
+ Calculating chi...
+ feffdt, feff.pad to feff.dat conversion: Feff8L (EXAFS)      release  0.1
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Yb16 O24
+ Reduced formula:  Yb2O3
+ space group: (Ia-3), space number:  (206)
+ abc:  8.946176   8.946176   8.946176
+ angles:109.471221 109.471221 109.471221
+ sites: 40
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=70 Rmt= 1.516 Rnm= 1.603 K  shell
+ Pot 1 Z= 8 Rmt= 1.024 Rnm= 1.103
+ Pot 2 Z=70 Rmt= 1.539 Rnm= 1.659
+ Gam_ch=3.550E+01 H-L exch
+ Mu=-1.384E+00 kf=2.066E+00 Vint=-1.765E+01 Rs_int= 1.755
+ PATH  Rmax= 4.652,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+       8 paths to process
+    path     filename
+       1     feff0001.dat
+       2     feff0002.dat
+       3     feff0003.dat
+       4     feff0004.dat
+       5     feff0005.dat
+       6     feff0006.dat
+       7     feff0007.dat
+       8     feff0008.dat
+    Use all paths with cw amplitude ratio   4.00%
+    S02  1.000  Global sig2  0.00000
+ Done with module 6: DW + final sum over paths.

@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "experiment_id": "nis_mp-1547_nims-ni-k_20260925T124654Z_b1561b1e",
+  "pair": {
+    "id": "nis_mp-1547_nims-ni-k",
+    "formula": "NiS",
+    "material_id": "mp-1547",
+    "xas_path": "fixtures/Ni-K_NiS_Si311_10ms_131127_1.txt",
+    "cif_file": "mp-1547.cif",
+    "xas_file": "Ni-K_NiS_Si311_10ms_131127_1.txt"
+  },
+  "arms": {
+    "A": {
+      "wall_time_s": 13.014373042155057,
+      "pre_interruption_wall_time_s": 5.089926375076175,
+      "recovery_wall_time_s": 7.9244466670788825,
+      "pre_interruption_token_usage": {
+        "input_tokens": 661,
+        "output_tokens": 95,
+        "total_tokens": 756,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1703,
+        "output_tokens": 277,
+        "total_tokens": 1980,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2364,
+        "output_tokens": 372,
+        "total_tokens": 2736,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nConcise fit summary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 149.42\n- R-factor: 0.0258\n\nFitted global parameters:\n- S0\u00b2 = 4.541 \u00b1 0.728\n- \u0394E0 = 9.40 \u00b1 1.53 eV\n\nFirst-shell path:\n- R = 2.392 \u00c5\n- \u0394R = 0.146 \u00b1 0.013 \u00c5\n- \u03c3\u00b2 = 0.00685 \u00b1 0.00207 \u00c5\u00b2\n\nOverall: the fit converged and gives a low R-factor, with a first-shell distance near 2.39 \u00c5.",
+      "data_loads": {
+        "raw_xas_imports": 1,
+        "processed_payload_loads": 1
+      },
+      "behavior": "baseline_restart_from_zero"
+    },
+    "B": {
+      "wall_time_s": 9.120856957975775,
+      "pre_interruption_wall_time_s": 4.115426290780306,
+      "recovery_wall_time_s": 5.005430667195469,
+      "pre_interruption_token_usage": {
+        "input_tokens": 661,
+        "output_tokens": 95,
+        "total_tokens": 756,
+        "requests": 1
+      },
+      "recovery_token_usage": {
+        "input_tokens": 1703,
+        "output_tokens": 293,
+        "total_tokens": 1996,
+        "requests": 2
+      },
+      "token_usage": {
+        "input_tokens": 2364,
+        "output_tokens": 388,
+        "total_tokens": 2752,
+        "requests": 3
+      },
+      "tool_calls": {
+        "total": 2,
+        "by_name": {
+          "fit_ffef_first_shell": 2
+        }
+      },
+      "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nConcise fit summary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 149.42\n- R-factor: 0.0258\n\nFitted global parameters:\n- S0\u00b2 = 4.541 \u00b1 0.728\n- \u0394E0 = 9.40 \u00b1 1.53 eV\n\nFirst-shell path:\n- R = 2.392 \u00c5\n- \u0394R = 0.146 \u00b1 0.013 \u00c5\n- \u03c3\u00b2 = 0.00685 \u00b1 0.00207 \u00c5\u00b2\n\nReference label:\n- Ni-K_NiS_Si311_10ms_131127_1\n\nIf you want, I can also interpret whether these values look physically reasonable for this Ni first shell.",
+      "data_loads": {
+        "raw_xas_imports": 0,
+        "processed_payload_loads": 2
+      },
+      "behavior": "checkpoint_resume"
+    }
+  },
+  "configuration": {
+    "protocol": "xas_live_full_usage_v1",
+    "requested_model": "gpt-5.4",
+    "arm_order": [
+      "A",
+      "B"
+    ],
+    "python": "3.12.14",
+    "packages": {
+      "openai": "2.7.1",
+      "openai-agents": "0.4.2",
+      "xraylarch": "2025.2.2.post26+gc21c0a59b",
+      "numpy": "2.5.3",
+      "scipy": "1.16.1",
+      "pydantic": "2.11.7"
+    },
+    "source_sha256": "ca6ce009e4de92877be459056d91d4ece3b93f3c619fe7a2855a9fcba720a143",
+    "original_test_sha256": "060e94dcc41436dfba18fe5f5cc0e645ae0ab56a30086154da89c03b3c6dbb9a",
+    "xas_sha256": "6cd1ddf521daf58ceb05525796518373c0cc857284df8a8ec7d2f6b4e2961374",
+    "cache_policy": "fresh scientific workspace per pair; processed/FEFF artifacts shared A then B within pair, as in original comparison",
+    "token_scope": "all recorded model responses before interruption plus recovery; local fitting itself consumes no model tokens",
+    "timing_scope": "both invocations, cache clearing, synchronous usage logging, interrupted checkpoint snapshot; excludes final snapshot",
+    "automatic_request_retries": 0,
+    "tracing_disabled": true
+  },
+  "result_directory": "/Users/xufanlu/resilient-agent/post_submission_2/xas_live_runs/nis_mp-1547_nims-ni-k_20260925T124654Z_b1561b1e",
+  "result_log_path": "/Users/xufanlu/resilient-agent/post_submission_2/live_ab_results.jsonl",
+  "B_minus_A_wall_time_s": -3.893516084179282,
+  "B_minus_A_total_tokens": 16,
+  "B_minus_A_raw_xas_imports": -1
+}

@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Tb6 O9
+ Reduced formula:  Tb2O3
+ space group: (C2/m), space number:  (12)
+ abc:  3.512523   7.205663   8.651262
+ angles: 99.753065  90.000000 104.107002
+ sites: 15

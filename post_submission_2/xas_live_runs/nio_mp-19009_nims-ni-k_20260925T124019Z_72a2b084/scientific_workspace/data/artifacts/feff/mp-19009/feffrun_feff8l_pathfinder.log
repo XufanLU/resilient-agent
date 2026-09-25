@@ -1,0 +1,15 @@
+
+======== running Feff module feff8l_pathfinder ========
+ Preparing plane wave scattering amplitudes...
+ Searching for paths...
+   WARNING:  rmax > distance to most distant atom.
+             Some paths may be missing.
+             rmax, ratx   4.62000E+00  0.00000E+00
+    Rmax  4.6200  keep and heap limits   0.0000000   0.0000000
+    Preparing neighbor table
+    Paths found      404   (maxheap, maxscatt      63   4)
+ Eliminating path degeneracies...
+    Plane wave chi amplitude filter   2.50%
+    Unique paths     17,  total paths     380
+ Done with module 4: pathfinder.
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG

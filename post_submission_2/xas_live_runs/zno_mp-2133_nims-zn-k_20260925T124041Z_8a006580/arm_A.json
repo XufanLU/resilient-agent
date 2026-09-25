@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 12.717520208097994,
+  "pre_interruption_wall_time_s": 4.279425166081637,
+  "recovery_wall_time_s": 8.438095042016357,
+  "pre_interruption_token_usage": {
+    "input_tokens": 659,
+    "output_tokens": 93,
+    "total_tokens": 752,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1691,
+    "output_tokens": 333,
+    "total_tokens": 2024,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2350,
+    "output_tokens": 426,
+    "total_tokens": 2776,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and Zn K-edge spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reference spectrum: Zn-K_ZnO_Si311_50ms_141206\n\nFitted parameters:\n- S0\u00b2 = 3.502 \u00b1 3.824\n- \u0394E0 = 6.535 \u00b1 12.627 eV\n- \u03c3\u00b2 = 0.00349 \u00b1 0.01461 \u00c5\u00b2\n- \u0394R = -0.00659 \u00b1 0.09071 \u00c5\n- Shell distance R = 1.9679 \u00c5\n\nFit quality:\n- Reduced \u03c7\u00b2 = 673.59\n- R-factor = 0.5755\n\nConcise interpretation:\n- The fitted first-shell distance is ~1.97 \u00c5, with a very small bond-length shift relative to the starting path.\n- However, the fit quality is weak overall, with large uncertainties and high reduced \u03c7\u00b2 / R-factor, so the parameter values should be treated cautiously.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

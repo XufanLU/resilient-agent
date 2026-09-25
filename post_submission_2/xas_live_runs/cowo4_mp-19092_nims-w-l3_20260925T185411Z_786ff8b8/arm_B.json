@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 8.78774212487042,
+  "pre_interruption_wall_time_s": 4.3112645000219345,
+  "recovery_wall_time_s": 4.476477624848485,
+  "pre_interruption_token_usage": {
+    "input_tokens": 660,
+    "output_tokens": 94,
+    "total_tokens": 754,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1691,
+    "output_tokens": 271,
+    "total_tokens": 1962,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2351,
+    "output_tokens": 365,
+    "total_tokens": 2716,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 4.44\n- R-factor: 1.00\n\nFitted parameters:\n- S0\u00b2: -5.20\n- \u0394E0: -174.20 eV\n- First-shell \u0394R: 0.706 \u00c5\n- First-shell R: 2.547 \u00c5\n- \u03c3\u00b2: 0.0765 \u00c5\u00b2\n\nNote:\n- The fit appears poor/unphysical: negative S0\u00b2, very large |\u0394E0|, large \u03c3\u00b2, and R-factor near 1 indicate this first-shell model likely does not describe the data well.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}

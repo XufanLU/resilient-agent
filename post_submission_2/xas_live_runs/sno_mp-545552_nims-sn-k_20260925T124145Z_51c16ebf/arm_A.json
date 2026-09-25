@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 11.874038957990706,
+  "pre_interruption_wall_time_s": 3.884914082940668,
+  "recovery_wall_time_s": 7.989124875050038,
+  "pre_interruption_token_usage": {
+    "input_tokens": 655,
+    "output_tokens": 89,
+    "total_tokens": 744,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1668,
+    "output_tokens": 280,
+    "total_tokens": 1948,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2323,
+    "output_tokens": 369,
+    "total_tokens": 2692,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nConcise fit summary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 9.61\n- R-factor: 0.0163\n\nFitted global parameters:\n- S0\u00b2 = 3.94 \u00b1 0.46\n- \u0394E0 = 11.77 \u00b1 1.13 eV\n\nFirst-shell path:\n- R = 2.214 \u00c5\n- \u0394R = 0.0625 \u00b1 0.0107 \u00c5\n- \u03c3\u00b2 = 0.00752 \u00b1 0.00185 \u00c5\u00b2\n\nSpectrum reference:\n- K_SnO_Si311_20111115\n\nIf you want, I can also help interpret whether these values look physically reasonable.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

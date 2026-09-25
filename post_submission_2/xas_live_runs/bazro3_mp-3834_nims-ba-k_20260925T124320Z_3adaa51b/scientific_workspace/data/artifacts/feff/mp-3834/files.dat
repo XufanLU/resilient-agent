@@ -1,0 +1,21 @@
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Ba1 Zr1 O3
+ Reduced formula:  BaZrO3
+ space group: (Pm-3m), space number:  (221)
+ abc:  4.212387   4.212387   4.212387
+ angles: 90.000000  90.000000  90.000000
+ sites: 5
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=56 Rmt= 1.971 Rnm= 1.997 K  shell
+ Pot 1 Z=56 Rmt= 2.174 Rnm= 2.238
+ Pot 2 Z= 8 Rmt= 1.026 Rnm= 1.119
+ Pot 3 Z=40 Rmt= 1.502 Rnm= 1.653
+ Gam_ch=1.592E+01 H-L exch
+ Mu=-1.944E+00 kf=1.917E+00 Vint=-1.594E+01 Rs_int= 1.892
+ PATH  Rmax= 4.255,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+ -----------------------------------------------------------------------
+    file        sig2   amp ratio    deg    nlegs  r effective
+ feff0001.dat 0.00000   100.000    12.000     2   2.9786
+ feff0002.dat 0.00000    62.930     8.000     2   3.6480
+ feff0003.dat 0.00000    38.550     6.000     2   4.2124

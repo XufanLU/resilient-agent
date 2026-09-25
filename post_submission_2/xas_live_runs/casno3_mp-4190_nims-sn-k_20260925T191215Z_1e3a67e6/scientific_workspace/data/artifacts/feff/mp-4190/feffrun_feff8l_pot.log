@@ -1,0 +1,20 @@
+
+======== running Feff module feff8l_pot ========
+ Calculating potentials ...
+    free atom potential and density for atom type    0
+    free atom potential and density for atom type    1
+    free atom potential and density for atom type    2
+    free atom potential and density for atom type    3
+    initial state energy
+    overlapped potential and density for unique potential    0
+    overlapped potential and density for unique potential    1
+    overlapped potential and density for unique potential    2
+    overlapped potential and density for unique potential    3
+    muffin tin radii and interstitial parameters
+    : ipot, Norman radius, Muffin tin radius, Overlap
+         0  1.49602E+00  1.38888E+00  1.15000E+00
+         1  1.71038E+00  1.63034E+00  1.12937E+00
+         2  1.09140E+00  1.02992E+00  1.15000E+00
+         3  1.50174E+00  1.39123E+00  1.15000E+00
+    : mu_old=    -0.972
+ Done with module 1: potentials.

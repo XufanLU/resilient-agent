@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Cu2 W2 O8
+ Reduced formula:  CuWO4
+ space group: (P-1), space number:  (2)
+ abc:  4.733088   4.978056   5.926025
+ angles: 87.072578  83.254834  86.620021
+ sites: 12

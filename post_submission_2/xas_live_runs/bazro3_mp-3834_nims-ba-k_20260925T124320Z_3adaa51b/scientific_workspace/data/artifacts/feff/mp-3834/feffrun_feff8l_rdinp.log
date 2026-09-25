@@ -1,0 +1,11 @@
+
+======== running Feff module feff8l_rdinp ========
+ Feff8L (EXAFS)      release  0.1
+ comment: None given
+ Source:
+ Structure Summary:  Ba1 Zr1 O3
+ Reduced formula:  BaZrO3
+ space group: (Pm-3m), space number:  (221)
+ abc:  4.212387   4.212387   4.212387
+ angles: 90.000000  90.000000  90.000000
+ sites: 5

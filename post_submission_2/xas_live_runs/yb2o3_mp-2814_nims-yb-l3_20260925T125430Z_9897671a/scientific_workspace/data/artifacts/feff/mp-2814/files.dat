@@ -1,0 +1,25 @@
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Yb16 O24
+ Reduced formula:  Yb2O3
+ space group: (Ia-3), space number:  (206)
+ abc:  8.946176   8.946176   8.946176
+ angles:109.471221 109.471221 109.471221
+ sites: 40
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=70 Rmt= 1.516 Rnm= 1.603 K  shell
+ Pot 1 Z= 8 Rmt= 1.024 Rnm= 1.103
+ Pot 2 Z=70 Rmt= 1.539 Rnm= 1.659
+ Gam_ch=3.550E+01 H-L exch
+ Mu=-1.384E+00 kf=2.066E+00 Vint=-1.765E+01 Rs_int= 1.755
+ PATH  Rmax= 4.652,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+ -----------------------------------------------------------------------
+    file        sig2   amp ratio    deg    nlegs  r effective
+ feff0001.dat 0.00000   100.000     6.000     2   2.2252
+ feff0002.dat 0.00000    29.950     3.000     2   3.4169
+ feff0003.dat 0.00000    29.930     3.000     2   3.4176
+ feff0004.dat 0.00000    18.360     3.000     2   3.9032
+ feff0005.dat 0.00000    18.350     3.000     2   3.9040
+ feff0006.dat 0.00000     2.842     3.000     2   4.0680
+ feff0007.dat 0.00000     2.839     3.000     2   4.0690
+ feff0008.dat 0.00000     2.758     6.000     4   4.4507

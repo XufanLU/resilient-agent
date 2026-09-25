@@ -1,0 +1,26 @@
+ comment: None given                            Feff8L (EXAFS)       0.1
+ Source:
+ Structure Summary:  Te4 Pb4
+ Reduced formula:  TePb
+ space group: (Pnma), space number:  (62)
+ abc:  4.648504   7.068369   8.499903
+ angles: 90.000000  90.000000  90.000000
+ sites: 8
+ POT  Non-SCF, core-hole, AFOLP (folp(0)= 1.150)
+ Abs   Z=82 Rmt= 1.820 Rnm= 1.922 K  shell
+ Pot 1 Z=82 Rmt= 1.967 Rnm= 2.100
+ Pot 2 Z=52 Rmt= 1.789 Rnm= 1.962
+ Gam_ch=6.462E+01 H-L exch
+ Mu=-1.402E+00 kf=1.308E+00 Vint=-7.915E+00 Rs_int= 2.774
+ PATH  Rmax= 4.695,  Keep_limit= 0.00, Heap_limit 0.00  Pwcrit= 2.50%
+ -----------------------------------------------------------------------
+    file        sig2   amp ratio    deg    nlegs  r effective
+ feff0001.dat 0.00000   100.000     1.000     2   3.0413
+ feff0002.dat 0.00000   152.700     2.000     2   3.2229
+ feff0003.dat 0.00000   128.000     2.000     2   3.3515
+ feff0004.dat 0.00000    34.130     1.000     2   3.8710
+ feff0005.dat 0.00000    53.700     2.000     2   4.0445
+ feff0006.dat 0.00000    41.740     2.000     2   4.2604
+ feff0007.dat 0.00000    17.340     1.000     2   4.4862
+ feff0008.dat 0.00000    30.930     2.000     2   4.5352
+ feff0009.dat 0.00000    27.510     2.000     2   4.6485

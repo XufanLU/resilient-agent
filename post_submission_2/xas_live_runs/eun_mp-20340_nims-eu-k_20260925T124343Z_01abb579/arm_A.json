@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 9.995107665657997,
+  "pre_interruption_wall_time_s": 3.280858499929309,
+  "recovery_wall_time_s": 6.714249165728688,
+  "pre_interruption_token_usage": {
+    "input_tokens": 661,
+    "output_tokens": 95,
+    "total_tokens": 756,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1701,
+    "output_tokens": 305,
+    "total_tokens": 2006,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2362,
+    "output_tokens": 400,
+    "total_tokens": 2762,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit window: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reference spectrum: Eu-K_EuN_Si311_40ms_181120_001\n\nBest-fit parameters:\n- S0\u00b2 = 6.57 \u00b1 7.60\n- \u0394E0 = 4.51 \u00b1 10.81 eV\n- \u0394R = 0.0227 \u00b1 0.1105 \u00c5\n- \u03c3\u00b2 = 0.0147 \u00b1 0.0181 \u00c5\u00b2\n- Fitted path distance R = 2.557 \u00c5\n\nFit quality:\n- Reduced \u03c7\u00b2 = 307.59\n- R-factor = 0.576\n\nTakeaway:\n- The fit converged, but the uncertainties are large and the fit quality is poor, so this first-shell result should be treated as preliminary.",
+  "data_loads": {
+    "raw_xas_imports": 1,
+    "processed_payload_loads": 1
+  },
+  "behavior": "baseline_restart_from_zero"
+}

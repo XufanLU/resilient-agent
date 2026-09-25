@@ -1,0 +1,35 @@
+{
+  "wall_time_s": 9.70364191569388,
+  "pre_interruption_wall_time_s": 4.009146166034043,
+  "recovery_wall_time_s": 5.694495749659836,
+  "pre_interruption_token_usage": {
+    "input_tokens": 658,
+    "output_tokens": 92,
+    "total_tokens": 750,
+    "requests": 1
+  },
+  "recovery_token_usage": {
+    "input_tokens": 1687,
+    "output_tokens": 322,
+    "total_tokens": 2009,
+    "requests": 2
+  },
+  "token_usage": {
+    "input_tokens": 2345,
+    "output_tokens": 414,
+    "total_tokens": 2759,
+    "requests": 3
+  },
+  "tool_calls": {
+    "total": 2,
+    "by_name": {
+      "fit_ffef_first_shell": 2
+    }
+  },
+  "final_output": "First-shell EXAFS fit completed for the current material and spectrum.\n\nSummary:\n- Fit range: k = 3.0\u201310.0 \u00c5\u207b\u00b9, R = 1.0\u20133.0 \u00c5\n- Reduced \u03c7\u00b2: 179.38\n- R-factor: 0.1698\n\nFitted global parameters:\n- S0\u00b2: 2.541 \u00b1 1.132\n- \u0394E0: -0.671 \u00b1 5.630 eV\n\nFirst-shell path:\n- Nominal R: 1.934 \u00c5\n- \u0394R: -0.183 \u00b1 0.035 \u00c5\n- \u03c3\u00b2: 0.00269 \u00b1 0.00544 \u00c5\u00b2\n\nInterpretation:\n- The fitted bond distance is about 1.934 - 0.183 = 1.751 \u00c5.\n- The fit converged, but the large reduced \u03c7\u00b2 and uncertainty on S0\u00b2 suggest the model quality is only moderate.\n\nIf you want, I can also help interpret whether this first-shell distance is chemically reasonable for the current structure.",
+  "data_loads": {
+    "raw_xas_imports": 0,
+    "processed_payload_loads": 2
+  },
+  "behavior": "checkpoint_resume"
+}
