@@ -418,7 +418,19 @@ def main() -> None:
     parser.add_argument("--process-log-path", type=Path, default=None)
     parser.add_argument("--no-process-log", action="store_true")
     parser.add_argument("--experiment-id", default=None)
+    parser.add_argument("--swe-task-id", default=None, help="Run one selected SWE metadata task with real disk checkpoint recovery.")
+    parser.add_argument("--env-file", type=Path, default=Path(".env"))
+    parser.add_argument("--model", default=None, help="Explicit model override for the SWE metadata path.")
     args = parser.parse_args()
+    if args.swe_task_id:
+        if args.log_path or args.process_log_path or args.no_log or args.no_process_log or args.experiment_id:
+            parser.error("The SWE path writes complete logs under a unique directory inside --root; omit legacy log/id options.")
+        from post_submission_2.swe_checkpoint_workflow import run_from_cli
+        summary = run_from_cli(args.swe_task_id, args.root, args.env_file, args.model)
+        print(json.dumps({"task_id": summary["task_id"], "result_directory": summary["result_directory"],
+                          "B_minus_A_wall_time_s": summary["B_minus_A_wall_time_s"],
+                          "B_minus_A_total_tokens": summary["B_minus_A_total_tokens"]}, indent=2))
+        return
     process_log_path = None if args.no_process_log else resolve_process_log_path(args.process_log_path)
     summary = run_ab_experiment(
         task_id=args.task_id,
